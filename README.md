@@ -1,4 +1,4 @@
-![inversée](data/icons/hicolor/scalable/apps/fr.benjaminbellamy.Inversee.svg")
+![inversée](data/icons/hicolor/scalable/apps/fr.benjaminbellamy.Inversee.svg)
 
 # inversée
 
