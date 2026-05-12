@@ -15,6 +15,12 @@ on:
 permissions:
   contents: write   # required to upload assets to a Release on tag push
 
+# Opt into Node.js 24 now so the deprecation warning about
+# actions/checkout@v4 running on Node 20 stops appearing.
+# Becomes the default June 2026 anyway.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   flatpak:
     name: Build Flatpak

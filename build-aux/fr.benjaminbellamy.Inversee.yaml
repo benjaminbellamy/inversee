@@ -32,6 +32,16 @@ cleanup:
 
 modules:
   - name: gmp
+    build-options:
+      # freedesktop SDK 25.08 ships gcc 15 with hardened defaults
+      # (-D_FORTIFY_SOURCE=3, -fcf-protection, -fstack-clash-protection,
+      # -grecord-gcc-switches, …). GMP 6.3.0's autoconf "long long
+      # reliability" probe interacts badly with that combination and
+      # rejects every ABI. Reset to a minimal set just for this module;
+      # the other modules keep the SDK's hardened defaults.
+      env:
+        CFLAGS: '-O2 -pipe -g'
+        CXXFLAGS: '-O2 -pipe -g'
     config-opts:
       - --enable-cxx
       - --enable-fat
