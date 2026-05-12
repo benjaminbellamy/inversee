@@ -135,14 +135,16 @@ namespace Inversee {
             lang_menu.append ("Português",        "win.language::pt");
 
             var section_top = new GLib.Menu ();
-            section_top.append_submenu (_("Language"), lang_menu);
+            section_top.append_submenu ("🌐  " + _("Language"), lang_menu);
 
             var section_bottom = new GLib.Menu ();
-            section_bottom.append (_("Keyboard Shortcuts"), "win.shortcuts");
-            section_bottom.append (_("About Inversée"),     "win.about");
+            section_bottom.append ("⌨  " + _("Keyboard Shortcuts"),
+                                   "win.shortcuts");
+            section_bottom.append ("📝  " + _("About Inversée"),
+                                   "win.about");
 
             var section_reset = new GLib.Menu ();
-            section_reset.append (_("Quit and reset"), "win.reset");
+            section_reset.append ("♻️  " + _("Quit and reset"), "win.reset");
 
             var menu = new GLib.Menu ();
             menu.append_section (null, section_top);
