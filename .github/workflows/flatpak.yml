@@ -41,6 +41,16 @@ jobs:
           cache-key: flatpak-builder-${{ github.sha }}
           run-tests: true
 
+      - name: Dump build logs on failure
+        if: failure()
+        run: |
+          echo "=== config.log files ==="
+          find .flatpak-builder/build -name config.log -print -exec tail -200 {} +
+          echo "=== meson logs ==="
+          find .flatpak-builder/build -name 'meson-log.txt' -print -exec cat {} +
+          echo "=== top-level build dir listing ==="
+          ls -la .flatpak-builder/build || true
+
       - name: Rename bundle for tagged release
         if: startsWith(github.ref, 'refs/tags/')
         run: mv inversee.flatpak inversee-${{ github.ref_name }}.flatpak
