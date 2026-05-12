@@ -44,11 +44,21 @@ jobs:
       - name: Dump build logs on failure
         if: failure()
         run: |
-          echo "=== config.log files ==="
-          find .flatpak-builder/build -name config.log -print -exec tail -200 {} +
+          for f in $(find .flatpak-builder/build -name config.log); do
+            echo "=========================================================="
+            echo "===  $f"
+            echo "===  (lines around reliability / conftest / error)"
+            echo "=========================================================="
+            grep -nE 'conftest|reliab|long long|configure:[0-9]+: (error|result):' "$f" \
+              | head -200 || true
+            echo
+            echo "===  …and the trailing 60 lines of the same file ==="
+            tail -60 "$f"
+            echo
+          done
           echo "=== meson logs ==="
           find .flatpak-builder/build -name 'meson-log.txt' -print -exec cat {} +
-          echo "=== top-level build dir listing ==="
+          echo "=== build dirs ==="
           ls -la .flatpak-builder/build || true
 
       - name: Rename bundle for tagged release
