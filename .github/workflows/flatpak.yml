@@ -20,7 +20,10 @@ jobs:
     name: Build Flatpak
     runs-on: ubuntu-latest
     container:
-      image: bilelmoussaoui/flatpak-github-actions:gnome-48
+      # The gnome-48 tag was never published; gnome-47 ships the same
+      # flatpak-builder. The org.gnome.Platform//48 runtime is pulled
+      # from Flathub at build time regardless of the image tag.
+      image: bilelmoussaoui/flatpak-github-actions:gnome-47
       options: --privileged
 
     steps:
