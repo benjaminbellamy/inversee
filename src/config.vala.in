@@ -1,0 +1,29 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+/*
+ * Inversée - Reverse Polish Notation calculator
+ * Copyright (C) 2026 Benjamin Bellamy <benjamin@castopod.org>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+namespace Inversee.Config {
+    public const string APP_ID = @APP_ID@;
+    public const string GETTEXT_PACKAGE = @GETTEXT_PACKAGE@;
+    public const string LOCALEDIR = @LOCALEDIR@;
+    public const string VERSION = @VERSION@;
+    public const string PROFILE = @PROFILE@;
+    public const string SOURCE_ICONS_DIR = @SOURCE_ICONS_DIR@;
+    public const string SCHEMAS_DIR = @SCHEMAS_DIR@;
+    public const string BUILD_LOCALEDIR = @BUILD_LOCALEDIR@;
+}

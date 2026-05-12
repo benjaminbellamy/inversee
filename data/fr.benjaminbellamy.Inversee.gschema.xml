@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="inversee">
+  <schema id="fr.benjaminbellamy.Inversee" path="/fr/benjaminbellamy/Inversee/">
+    <key name="window-width" type="i">
+      <default>380</default>
+      <summary>Window width</summary>
+      <description>Width of the main window in pixels.</description>
+    </key>
+    <key name="window-height" type="i">
+      <default>680</default>
+      <summary>Window height</summary>
+      <description>Height of the main window in pixels.</description>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>false</default>
+      <summary>Window maximized state</summary>
+      <description>Whether the main window is maximized.</description>
+    </key>
+    <key name="language" type="s">
+      <choices>
+        <choice value="auto"/>
+        <choice value="en"/>
+        <choice value="fr"/>
+        <choice value="de"/>
+        <choice value="it"/>
+        <choice value="es"/>
+        <choice value="pl"/>
+      </choices>
+      <default>'auto'</default>
+      <summary>UI language</summary>
+      <description>
+        Selected UI language. "auto" follows the system locale; any other
+        value forces that language at startup by setting LANGUAGE.
+      </description>
+    </key>
+  </schema>
+</schemalist>

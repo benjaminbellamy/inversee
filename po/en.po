@@ -1,0 +1,333 @@
+# English translation for inversee.
+# Copyright (C) 2026 Benjamin Bellamy
+# This file is distributed under the same license as the inversee package.
+# Benjamin Bellamy <benjamin@castopod.org>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: inversee 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-12 21:17+0200\n"
+"PO-Revision-Date: 2026-05-12 00:00+0000\n"
+"Last-Translator: Benjamin Bellamy <benjamin@castopod.org>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/fr.benjaminbellamy.Inversee.desktop.in:2
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:11 src/ui/window.vala:35
+msgid "Inversée"
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.desktop.in:3
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:12
+msgid "Reverse Polish Notation calculator"
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.desktop.in:4
+msgid "RPN;calculator;reverse;polish;notation;HP;maths;"
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:15
+msgid "Inversée is a Reverse Polish Notation (RPN) calculator with an unbounded stack, designed to look and behave like a native GNOME application."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:19
+msgid "The full stack is visible at all times, values are stored as arbitrary precision MPFR floats, and the locale-aware display follows your system settings."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:37
+msgid "Benjamin Bellamy"
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:52
+msgid "Initial scaffold."
+msgstr ""
+
+#: src/core/calculator.vala:171
+#, c-format
+msgid "Binary operation requires 2 operands (have %d)"
+msgstr ""
+
+#: src/core/calculator.vala:200
+msgid "Unary operation requires 1 operand"
+msgstr ""
+
+#: src/core/calculator.vala:326
+#, c-format
+msgid "Invalid entry: %s"
+msgstr ""
+
+#: src/core/history.vala:92
+msgid "nothing to undo"
+msgstr ""
+
+#: src/core/parser.vala:74
+#, c-format
+msgid "Could not parse number: '%s'"
+msgstr ""
+
+#: src/core/persistence.vala:82
+#, c-format
+msgid "Could not parse state: %s"
+msgstr ""
+
+#: src/core/persistence.vala:90
+msgid "State root must be a JSON object"
+msgstr ""
+
+#: src/core/persistence.vala:97
+msgid "Missing 'version' field"
+msgstr ""
+
+#: src/core/persistence.vala:103
+#, c-format
+msgid "State version %s is not supported"
+msgstr ""
+
+#: src/core/persistence.vala:140 src/core/persistence.vala:173
+#, c-format
+msgid "Field '%s' must be an array"
+msgstr ""
+
+#: src/core/persistence.vala:150
+#, c-format
+msgid "Element '%s'[%u] must be a string"
+msgstr ""
+
+#: src/core/persistence.vala:157
+#, c-format
+msgid "Element '%s'[%u] is not a valid number: %s"
+msgstr ""
+
+#: src/core/persistence.vala:183
+#, c-format
+msgid "Element '%s'[%u] must be an array"
+msgstr ""
+
+#: src/core/persistence.vala:193
+#, c-format
+msgid "Element '%s'[%u][%u] must be a string"
+msgstr ""
+
+#: src/core/persistence.vala:201
+#, c-format
+msgid "Element '%s'[%u][%u] is not a valid number: %s"
+msgstr ""
+
+#: src/core/stack.vala:62 src/core/stack.vala:90 src/core/stack.vala:130
+msgid "Stack is empty"
+msgstr ""
+
+#: src/core/stack.vala:79
+#, c-format
+msgid "Index %d out of range (stack size %u)"
+msgstr ""
+
+#: src/core/stack.vala:102
+#, c-format
+msgid "dup2 requires 2 operands (have %u)"
+msgstr ""
+
+#: src/core/stack.vala:117
+#, c-format
+msgid "swap requires 2 operands (have %u)"
+msgstr ""
+
+#: src/core/stack.vala:143
+#, c-format
+msgid "rot requires 3 operands (have %u)"
+msgstr ""
+
+#. Row 0: stack ops, uppercase, flat (no chrome) for a
+#. lighter visual weight than the chunky digit/math buttons.
+#: src/ui/keypad.vala:59
+msgid "SWAP"
+msgstr ""
+
+#: src/ui/keypad.vala:61
+msgid "DROP"
+msgstr ""
+
+#: src/ui/keypad.vala:63
+msgid "ROT"
+msgstr ""
+
+#: src/ui/keypad.vala:65
+msgid "DUP"
+msgstr ""
+
+#: src/ui/keypad.vala:67
+msgid "DUP2"
+msgstr ""
+
+#: src/ui/keypad.vala:77
+msgid "mod"
+msgstr ""
+
+#: src/ui/keypad.vala:114
+msgid "Clear"
+msgstr ""
+
+#: src/ui/keypad.vala:118 src/ui/window.vala:284
+msgid "Enter"
+msgstr ""
+
+#: src/ui/stack_view.vala:59
+msgid "Stack empty"
+msgstr ""
+
+#: src/ui/window.vala:96
+msgid "Undo (Ctrl+Z)"
+msgstr ""
+
+#: src/ui/window.vala:104
+msgid "Clipboard"
+msgstr ""
+
+#: src/ui/window.vala:110
+msgid "Main Menu"
+msgstr ""
+
+#: src/ui/window.vala:119 src/ui/window.vala:299
+msgid "Paste"
+msgstr ""
+
+#: src/ui/window.vala:120
+msgid "Copy"
+msgstr ""
+
+#: src/ui/window.vala:121
+msgid "Copy stack"
+msgstr ""
+
+#: src/ui/window.vala:127
+msgid "Auto (system)"
+msgstr ""
+
+#: src/ui/window.vala:136
+msgid "Language"
+msgstr ""
+
+#: src/ui/window.vala:139 src/ui/window.vala:269
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: src/ui/window.vala:140
+msgid "About Inversée"
+msgstr ""
+
+#: src/ui/window.vala:143 src/ui/window.vala:207
+msgid "Quit and reset"
+msgstr ""
+
+#: src/ui/window.vala:193
+msgid "Restart Inversée to apply the language change."
+msgstr ""
+
+#: src/ui/window.vala:202
+msgid "Quit and reset?"
+msgstr ""
+
+#: src/ui/window.vala:203
+msgid "Inversée will quit. The stack, undo history, saved language, and window size will all be cleared."
+msgstr ""
+
+#: src/ui/window.vala:206
+msgid "Cancel"
+msgstr ""
+
+#: src/ui/window.vala:258
+msgid "A Reverse Polish Notation calculator"
+msgstr ""
+
+#: src/ui/window.vala:282
+msgid "Digit entry"
+msgstr ""
+
+#: src/ui/window.vala:283
+msgid "Decimal separator"
+msgstr ""
+
+#: src/ui/window.vala:284
+msgid "Push entry / duplicate X"
+msgstr ""
+
+#: src/ui/window.vala:285
+msgid "Backspace"
+msgstr ""
+
+#: src/ui/window.vala:285
+msgid "Delete last char / drop X"
+msgstr ""
+
+#: src/ui/window.vala:286
+msgid "Arithmetic"
+msgstr ""
+
+#: src/ui/window.vala:287
+msgid "Percent of"
+msgstr ""
+
+#: src/ui/window.vala:288
+msgid "Power (x^y)"
+msgstr ""
+
+#: src/ui/window.vala:289
+msgid "Square root"
+msgstr ""
+
+#: src/ui/window.vala:290
+msgid "Inverse (1/x)"
+msgstr ""
+
+#: src/ui/window.vala:291
+msgid "Negate (+/−)"
+msgstr ""
+
+#: src/ui/window.vala:292
+msgid "Modulo"
+msgstr ""
+
+#: src/ui/window.vala:293
+msgid "Swap"
+msgstr ""
+
+#: src/ui/window.vala:294
+msgid "Drop"
+msgstr ""
+
+#: src/ui/window.vala:295
+msgid "Rotate"
+msgstr ""
+
+#: src/ui/window.vala:296
+msgid "Escape"
+msgstr ""
+
+#: src/ui/window.vala:296
+msgid "Clear stack"
+msgstr ""
+
+#: src/ui/window.vala:297
+msgid "Undo"
+msgstr ""
+
+#: src/ui/window.vala:298
+msgid "Copy X"
+msgstr ""
+
+#: src/ui/window.vala:485
+msgid "Copied"
+msgstr ""
+
+#: src/ui/window.vala:492 src/ui/window.vala:505
+msgid "Nothing to copy"
+msgstr ""
+
+#: src/ui/window.vala:524
+msgid "Stack copied"
+msgstr ""

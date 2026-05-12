@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Inversée
+Comment=Reverse Polish Notation calculator
+Keywords=RPN;calculator;reverse;polish;notation;HP;maths;
+Exec=inversee
+Icon=fr.benjaminbellamy.Inversee
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Utility;Calculator;
+StartupNotify=true

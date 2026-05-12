@@ -1,0 +1,63 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Inversée - Reverse Polish Notation calculator
+# Copyright (C) 2026 Benjamin Bellamy <benjamin@castopod.org>
+
+app-id: fr.benjaminbellamy.Inversee
+runtime: org.gnome.Platform
+runtime-version: '48'
+sdk: org.gnome.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.vala
+command: inversee
+
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+  # No --share=network: Inversée must work fully offline.
+
+build-options:
+  append-path: /usr/lib/sdk/vala/bin
+  prepend-ld-library-path: /usr/lib/sdk/vala/lib
+
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - /share/aclocal
+  - /share/info
+  - /share/man
+  - '*.la'
+  - '*.a'
+
+modules:
+  - name: gmp
+    config-opts:
+      - --enable-cxx
+      - --enable-fat
+      - --disable-static
+    sources:
+      - type: archive
+        url: https://gmplib.org/download/gmp/gmp-6.3.0.tar.xz
+        sha256: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
+        # TODO: verify sha256 against an upstream release announcement
+        # before the first flatpak-builder run.
+
+  - name: mpfr
+    config-opts:
+      - --disable-static
+    sources:
+      - type: archive
+        url: https://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz
+        sha256: 277807353a6726978996945af13e52829e3abd7a9a5b7fb2793894e18f1fcbb2
+        # TODO: verify sha256 against an upstream release announcement
+        # before the first flatpak-builder run.
+
+  - name: inversee
+    buildsystem: meson
+    config-opts:
+      - -Dtests=true
+      - -Dprofile=default
+    sources:
+      - type: dir
+        path: ..

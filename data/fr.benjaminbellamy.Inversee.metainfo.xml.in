@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SPDX-License-Identifier: CC0-1.0
+  Copyright (C) 2026 Benjamin Bellamy <benjamin@castopod.org>
+-->
+<component type="desktop-application">
+  <id>fr.benjaminbellamy.Inversee</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Inversée</name>
+  <summary>Reverse Polish Notation calculator</summary>
+
+  <description>
+    <p>
+      Inversée is a Reverse Polish Notation (RPN) calculator with an unbounded
+      stack, designed to look and behave like a native GNOME application.
+    </p>
+    <p>
+      The full stack is visible at all times, values are stored as arbitrary
+      precision MPFR floats, and the locale-aware display follows your
+      system settings.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">fr.benjaminbellamy.Inversee.desktop</launchable>
+
+  <provides>
+    <binary>inversee</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/benjaminbellamy/inversee</url>
+  <url type="bugtracker">https://github.com/benjaminbellamy/inversee/issues</url>
+  <url type="vcs-browser">https://github.com/benjaminbellamy/inversee</url>
+
+  <developer id="fr.benjaminbellamy">
+    <name>Benjamin Bellamy</name>
+  </developer>
+
+  <content_rating type="oars-1.1" />
+
+  <branding>
+    <color type="primary" scheme_preference="light">#cf354f</color>
+    <color type="primary" scheme_preference="dark">#5e5e5e</color>
+  </branding>
+
+  <!-- Screenshots will be added once the UI is in place. -->
+
+  <releases>
+    <release version="0.1.0" date="2026-05-12">
+      <description>
+        <p>Initial scaffold.</p>
+      </description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,15 @@
+# Source files containing translatable strings.
+# Keep this list sorted.
+data/fr.benjaminbellamy.Inversee.desktop.in
+data/fr.benjaminbellamy.Inversee.metainfo.xml.in
+src/core/calculator.vala
+src/core/history.vala
+src/core/parser.vala
+src/core/persistence.vala
+src/core/stack.vala
+src/main.vala
+src/ui/application.vala
+src/ui/entry_view.vala
+src/ui/keypad.vala
+src/ui/stack_view.vala
+src/ui/window.vala

@@ -1,0 +1,14 @@
+option(
+    'tests',
+    type: 'boolean',
+    value: true,
+    description: 'Build the test suite',
+)
+
+option(
+    'profile',
+    type: 'combo',
+    choices: ['default', 'development'],
+    value: 'default',
+    description: 'Build profile (development enables extra checks)',
+)
