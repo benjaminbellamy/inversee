@@ -1,15 +1,12 @@
-![](data/icons/hicolor/scalable/apps/fr.benjaminbellamy.Inversee.svg")
+![inversée](data/icons/hicolor/scalable/apps/fr.benjaminbellamy.Inversee.svg")
 
-# Inversée
+# inversée
 
-A Reverse Polish Notation (RPN) calculator for Linux,
+A Reverse Polish Notation (*Polonaise inversée*) calculator for Linux,
 built to look and feel like a native GNOME application.
 
-> inversée \\ɛ̃.vɛʁ.se\\  
-Participe passé féminin singulier de inverser.
-
-The name *Inversée* plays on *notation polonaise inversée* — the French term
-for RPN — and on the act of inverting an infix expression into postfix form.
+> **inversée** \\ɛ̃.vɛʁ.se\\  
+> French, past participle, feminine singular, of "inverser".
 
 ## Features
 
