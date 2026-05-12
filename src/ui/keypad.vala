@@ -58,16 +58,17 @@ namespace Inversee {
             // lighter visual weight than the chunky digit/math buttons.
             this.add_stackop_button (_("SWAP"), 0, 0,
                 () => this.calc.swap ());
-            this.add_stackop_button (_("DROP"), 1, 0,
-                () => this.calc.drop ());
-            this.add_stackop_button (_("ROT"),  2, 0,
+            this.add_stackop_button (_("ROT"),  1, 0,
                 () => this.calc.rot ());
-            this.add_stackop_button (_("DUP"),  3, 0,
+            this.add_stackop_button (_("DUP"),  2, 0,
                 () => this.calc.dup ());
-            this.add_stackop_button (_("DUP2"), 4, 0,
+            this.add_stackop_button (_("DUP2"), 3, 0,
                 () => this.calc.dup2 ());
+            this.add_stackop_button (_("DROP"), 4, 0,
+                () => this.calc.drop ());
 
-            // Row 1: math functions (used to live near the bottom).
+            // Row 1: math functions. Clear takes the rightmost slot
+            // that the removed `%` button used to occupy.
             this.add_action_button ("√",   0, 1, 1, 1, {},
                 () => this.calc.apply_unary (UnaryOp.SQRT));
             this.add_action_button ("1/x", 1, 1, 1, 1, {},
@@ -76,8 +77,8 @@ namespace Inversee {
                 () => this.calc.apply_binary (BinaryOp.POW));
             this.add_action_button (_("mod"), 3, 1, 1, 1, {},
                 () => this.calc.apply_binary (BinaryOp.MOD));
-            this.add_action_button ("%",   4, 1, 1, 1, {},
-                () => this.calc.apply_binary (BinaryOp.PERCENT));
+            this.add_action_button ("⌫", 4, 1, 1, 1, {},
+                () => this.calc.backspace ());
 
             // Rows 2-5 cols 0-3: digit pad + ÷ × − +.
             this.add_digit_button (7, 0, 2);
@@ -108,10 +109,8 @@ namespace Inversee {
             this.add_action_button ("+", 3, 5, 1, 1, { "numeric" },
                 () => this.calc.apply_binary (BinaryOp.ADD));
 
-            // Col 4: backspace (row 2), Clear (row 3), Enter (rows 4-5).
-            this.add_action_button ("⌫", 4, 2, 1, 1, {},
-                () => this.calc.backspace ());
-            this.add_action_button (_("Clear"), 4, 3, 1, 1,
+            // Col 4: Clear (row 2), Enter (rows 3-5, tall accent).
+            this.add_action_button (_("Clear"), 4, 2, 1, 1,
                                     { "destructive-action" },
                 () => this.calc.clear_stack ());
 
@@ -124,7 +123,7 @@ namespace Inversee {
                     this.error_occurred (e.message);
                 }
             });
-            this.attach (enter_b, 4, 4, 1, 2);
+            this.attach (enter_b, 4, 3, 1, 3);
         }
 
         private void add_digit_button (int digit, int col, int row) {
