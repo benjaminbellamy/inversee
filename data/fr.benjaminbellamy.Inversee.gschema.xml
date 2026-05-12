@@ -24,7 +24,9 @@
         <choice value="de"/>
         <choice value="it"/>
         <choice value="es"/>
+        <choice value="nl"/>
         <choice value="pl"/>
+        <choice value="pt"/>
       </choices>
       <default>'auto'</default>
       <summary>UI language</summary>

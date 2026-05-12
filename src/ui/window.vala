@@ -130,7 +130,9 @@ namespace Inversee {
             lang_menu.append ("Deutsch",          "win.language::de");
             lang_menu.append ("Italiano",         "win.language::it");
             lang_menu.append ("Español",          "win.language::es");
+            lang_menu.append ("Nederlands",       "win.language::nl");
             lang_menu.append ("Polski",           "win.language::pl");
+            lang_menu.append ("Português",        "win.language::pt");
 
             var section_top = new GLib.Menu ();
             section_top.append_submenu (_("Language"), lang_menu);
