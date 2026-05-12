@@ -33,19 +33,25 @@ cleanup:
 modules:
   - name: gmp
     build-options:
-      # freedesktop SDK 25.08 ships gcc 15 with hardened defaults
+      # freedesktop SDK 25.08 ships GCC 15 with hardened defaults
       # (-D_FORTIFY_SOURCE=3, -fcf-protection, -fstack-clash-protection,
-      # -grecord-gcc-switches, …). GMP 6.3.0's autoconf "long long
-      # reliability" probe interacts badly with that combination and
-      # rejects every ABI. Reset to a minimal set just for this module;
-      # the other modules keep the SDK's hardened defaults.
+      # -grecord-gcc-switches, …). Reset CFLAGS to a minimal set just
+      # for this module; the other modules keep the SDK's hardened
+      # defaults.
       env:
         CFLAGS: '-O2 -pipe -g'
         CXXFLAGS: '-O2 -pipe -g'
     config-opts:
       - --enable-cxx
-      - --enable-fat
       - --disable-static
+      # Drop --enable-fat: its CPU-dispatch autoconf probe ("long long
+      # reliability test 1") fails the configure step under fdo 25.08
+      # regardless of CFLAGS. Force a generic x86_64 target so GMP
+      # doesn't autodetect zenN-pc-linux-gnu from the host CPU. A
+      # generic build is plenty for the arithmetic this app actually
+      # performs.
+      - --build=x86_64-pc-linux-gnu
+      - --host=x86_64-pc-linux-gnu
     sources:
       - type: archive
         url: https://gmplib.org/download/gmp/gmp-6.3.0.tar.xz
