@@ -23,6 +23,21 @@
     </p>
   </description>
 
+  <categories>
+    <category>Utility</category>
+    <category>Calculator</category>
+  </categories>
+
+  <keywords>
+    <keyword>RPN</keyword>
+    <keyword>calculator</keyword>
+    <keyword>reverse</keyword>
+    <keyword>polish</keyword>
+    <keyword>notation</keyword>
+    <keyword>HP</keyword>
+    <keyword>maths</keyword>
+  </keywords>
+
   <launchable type="desktop-id">fr.benjaminbellamy.Inversee.desktop</launchable>
 
   <provides>
@@ -37,6 +52,8 @@
     <name>Benjamin Bellamy</name>
   </developer>
 
+  <update_contact>benjamin_AT_castopod.org</update_contact>
+
   <content_rating type="oars-1.1" />
 
   <branding>
@@ -45,9 +62,13 @@
   </branding>
 
   <screenshots>
-    <screenshot type="default">
-      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/1.0.0/data/screenshots/screenshot.png</image>
-      <caption>The main window: stack view, entry buffer, and keypad.</caption>
+    <screenshot type="default" environment="gnome">
+      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot.png</image>
+      <caption>The main window in light mode.</caption>
+    </screenshot>
+    <screenshot environment="gnome:dark">
+      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot_dark.png</image>
+      <caption>The main window in dark mode.</caption>
     </screenshot>
   </screenshots>
 
