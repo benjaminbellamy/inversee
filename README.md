@@ -10,6 +10,14 @@ built to look and feel like a native GNOME application.
 
 ![Screenshot of Inversée](data/screenshots/screenshot.png)
 
+## Install
+
+```sh
+curl -L -o /tmp/inversee.flatpak \
+    https://github.com/benjaminbellamy/inversee/releases/download/1.0.0/inversee-1.0.0.flatpak \
+    && flatpak install --user --bundle /tmp/inversee.flatpak
+```
+
 ## Features
 
 - **Unbounded stack** (Forth/dc-style); every level is visible at once.
