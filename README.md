@@ -8,6 +8,8 @@ built to look and feel like a native GNOME application.
 > **inversée** \\ɛ̃.vɛʁ.se\\  
 > French, past participle, feminine singular, of "inverser".
 
+![Screenshot of Inversée](data/screenshots/screenshot.png)
+
 ## Features
 
 - **Unbounded stack** (Forth/dc-style); every level is visible at once.
