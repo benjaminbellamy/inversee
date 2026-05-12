@@ -31,7 +31,7 @@ jobs:
         uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
           bundle: inversee.flatpak
-          manifest-path: build-aux/fr.benjaminbellamy.Inversee.yml
+          manifest-path: build-aux/fr.benjaminbellamy.Inversee.yaml
           cache-key: flatpak-builder-${{ github.sha }}
           run-tests: true
 

@@ -44,7 +44,12 @@
     <color type="primary" scheme_preference="dark">#5e5e5e</color>
   </branding>
 
-  <!-- Screenshots will be added once the UI is in place. -->
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/1.0.0/data/screenshots/screenshot.png</image>
+      <caption>The main window: stack view, entry buffer, and keypad.</caption>
+    </screenshot>
+  </screenshots>
 
   <releases>
     <release version="1.0.0" date="2026-05-13">

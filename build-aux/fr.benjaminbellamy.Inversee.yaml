@@ -40,8 +40,6 @@ modules:
       - type: archive
         url: https://gmplib.org/download/gmp/gmp-6.3.0.tar.xz
         sha256: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
-        # TODO: verify sha256 against an upstream release announcement
-        # before the first flatpak-builder run.
 
   - name: mpfr
     config-opts:
@@ -50,8 +48,6 @@ modules:
       - type: archive
         url: https://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz
         sha256: 277807353a6726978996945af13e52829e3abd7a9a5b7fb2793894e18f1fcbb2
-        # TODO: verify sha256 against an upstream release announcement
-        # before the first flatpak-builder run.
 
   - name: inversee
     buildsystem: meson
@@ -59,5 +55,7 @@ modules:
       - -Dtests=true
       - -Dprofile=default
     sources:
-      - type: dir
-        path: ..
+      - type: git
+        url: https://github.com/benjaminbellamy/inversee.git
+        tag: 1.0.0
+        commit: b611a2fe4e02c06ab7731a2df6c616d8f2d192f3
