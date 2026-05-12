@@ -467,9 +467,7 @@ namespace Inversee {
         }
 
         private void show_error (string message) {
-            var toast = new Adw.Toast (message);
-            toast.timeout = 3;
-            this.toast_overlay.add_toast (toast);
+            this.entry_view.show_error (message);
         }
 
         private void show_info (string message) {
