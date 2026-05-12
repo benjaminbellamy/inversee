@@ -47,6 +47,22 @@
   <!-- Screenshots will be added once the UI is in place. -->
 
   <releases>
+    <release version="1.0.0" date="2026-05-13">
+      <description>
+        <p>First public release.</p>
+        <ul>
+          <li>Unbounded RPN stack with swap, drop, rot, dup, dup2 and clear.</li>
+          <li>Arbitrary-precision arithmetic via MPFR (128-bit internal).</li>
+          <li>Full operation set: + − × ÷ mod %, x^y, √, 1/x, +/−.</li>
+          <li>Unbounded undo, capped at 1000 entries per session.</li>
+          <li>Locale-aware display, locale-tolerant clipboard paste.</li>
+          <li>Clipboard menu: paste, copy X, copy whole stack.</li>
+          <li>Session persistence to $XDG_DATA_HOME/inversee/state.json.</li>
+          <li>Window geometry and chosen UI language persisted via GSettings.</li>
+          <li>Translations: English, French, German, Italian, Spanish, Dutch, Polish, Portuguese.</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.1.0" date="2026-05-12">
       <description>
         <p>Initial scaffold.</p>
