@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: inversee 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-12 21:17+0200\n"
+"POT-Creation-Date: 2026-05-12 23:09+0200\n"
 "PO-Revision-Date: 2026-05-12 00:00+0000\n"
 "Last-Translator: Benjamin Bellamy <benjamin@castopod.org>\n"
 "Language-Team: Spanish\n"
@@ -47,16 +47,15 @@ msgstr ""
 msgid "Initial scaffold."
 msgstr ""
 
-#: src/core/calculator.vala:171
-#, c-format
-msgid "Binary operation requires 2 operands (have %d)"
-msgstr "Operación binaria: se requieren 2 operandos (%d disponibles)"
+#: src/core/calculator.vala:170
+msgid "Needs 2 operands"
+msgstr "Se requieren 2 operandos"
 
-#: src/core/calculator.vala:200
-msgid "Unary operation requires 1 operand"
-msgstr "Operación unaria: se requiere 1 operando"
+#: src/core/calculator.vala:196
+msgid "Needs 1 operand"
+msgstr "Se requiere 1 operando"
 
-#: src/core/calculator.vala:326
+#: src/core/calculator.vala:321
 #, c-format
 msgid "Invalid entry: %s"
 msgstr "Entrada no válida: %s"
@@ -66,9 +65,9 @@ msgid "nothing to undo"
 msgstr "nada que deshacer"
 
 #: src/core/parser.vala:74
-#, c-format
-msgid "Could not parse number: '%s'"
-msgstr "No se pudo interpretar el número: «%s»"
+#, fuzzy, c-format
+msgid "Invalid number: %s"
+msgstr "Número no válido: %s"
 
 #: src/core/persistence.vala:82
 #, c-format
@@ -118,29 +117,26 @@ msgstr "El elemento «%s»[%u][%u] debe ser una cadena"
 msgid "Element '%s'[%u][%u] is not a valid number: %s"
 msgstr "El elemento «%s»[%u][%u] no es un número válido: %s"
 
-#: src/core/stack.vala:62 src/core/stack.vala:90 src/core/stack.vala:130
+#: src/core/stack.vala:62 src/core/stack.vala:89 src/core/stack.vala:123
 msgid "Stack is empty"
 msgstr "Pila vacía"
 
 #: src/core/stack.vala:79
-#, c-format
-msgid "Index %d out of range (stack size %u)"
-msgstr "Índice %d fuera de rango (tamaño de la pila: %u)"
+#, fuzzy, c-format
+msgid "Index %d out of range"
+msgstr "Índice %d fuera de rango"
 
-#: src/core/stack.vala:102
-#, c-format
-msgid "dup2 requires 2 operands (have %u)"
-msgstr "dup2 requiere 2 operandos (%u disponibles)"
+#: src/core/stack.vala:100
+msgid "dup2 needs 2 operands"
+msgstr "dup2: se requieren 2 operandos"
 
-#: src/core/stack.vala:117
-#, c-format
-msgid "swap requires 2 operands (have %u)"
-msgstr "swap requiere 2 operandos (%u disponibles)"
+#: src/core/stack.vala:112
+msgid "swap needs 2 operands"
+msgstr "swap: se requieren 2 operandos"
 
-#: src/core/stack.vala:143
-#, c-format
-msgid "rot requires 3 operands (have %u)"
-msgstr "rot requiere 3 operandos (%u disponibles)"
+#: src/core/stack.vala:135
+msgid "rot needs 3 operands"
+msgstr "rot: se requieren 3 operandos"
 
 #. Row 0: stack ops, uppercase, flat (no chrome) for a
 #. lighter visual weight than the chunky digit/math buttons.
@@ -149,30 +145,31 @@ msgid "SWAP"
 msgstr ""
 
 #: src/ui/keypad.vala:61
-msgid "DROP"
-msgstr ""
-
-#: src/ui/keypad.vala:63
 msgid "ROT"
 msgstr ""
 
-#: src/ui/keypad.vala:65
+#: src/ui/keypad.vala:63
 msgid "DUP"
 msgstr ""
 
-#: src/ui/keypad.vala:67
+#: src/ui/keypad.vala:65
 msgid "DUP2"
 msgstr ""
 
-#: src/ui/keypad.vala:77
+#: src/ui/keypad.vala:67
+msgid "DROP"
+msgstr ""
+
+#: src/ui/keypad.vala:78
 msgid "mod"
 msgstr ""
 
-#: src/ui/keypad.vala:114
+#. Col 4: Clear (row 2), Enter (rows 3-5, tall accent).
+#: src/ui/keypad.vala:113
 msgid "Clear"
 msgstr ""
 
-#: src/ui/keypad.vala:118 src/ui/window.vala:284
+#: src/ui/keypad.vala:117 src/ui/window.vala:284
 msgid "Enter"
 msgstr ""
 
@@ -320,17 +317,28 @@ msgstr "Deshacer"
 msgid "Copy X"
 msgstr "Copiar X"
 
-#: src/ui/window.vala:485
+#: src/ui/window.vala:483
 msgid "Copied"
 msgstr "Copiado"
 
-#: src/ui/window.vala:492 src/ui/window.vala:505
+#: src/ui/window.vala:490 src/ui/window.vala:503
 msgid "Nothing to copy"
 msgstr "Nada que copiar"
 
-#: src/ui/window.vala:524
+#: src/ui/window.vala:522
 msgid "Stack copied"
 msgstr "Pila copiada"
+
+#, c-format
+#~ msgid "Binary operation requires 2 operands (have %d)"
+#~ msgstr "Operación binaria: se requieren 2 operandos (%d disponibles)"
+
+#~ msgid "Unary operation requires 1 operand"
+#~ msgstr "Operación unaria: se requiere 1 operando"
+
+#, c-format
+#~ msgid "Could not parse number: '%s'"
+#~ msgstr "No se pudo interpretar el número: «%s»"
 
 #~ msgid "Reset"
 #~ msgstr "Restablecer"

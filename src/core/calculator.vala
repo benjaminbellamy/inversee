@@ -167,10 +167,7 @@ namespace Inversee {
                     this.commit_entry_unsafe ();
                 }
                 if (this.stack.size < 2) {
-                    throw new StackError.UNDERFLOW (
-                        _("Binary operation requires 2 operands (have %d)"),
-                        this.stack.size
-                    );
+                    throw new StackError.UNDERFLOW (_("Needs 2 operands"));
                 }
                 var x = this.stack.pop ();
                 var y = this.stack.pop ();
@@ -196,9 +193,7 @@ namespace Inversee {
                     this.commit_entry_unsafe ();
                 }
                 if (this.stack.size < 1) {
-                    throw new StackError.UNDERFLOW (
-                        _("Unary operation requires 1 operand")
-                    );
+                    throw new StackError.UNDERFLOW (_("Needs 1 operand"));
                 }
                 var x = this.stack.pop ();
                 Number result;

@@ -71,7 +71,7 @@ namespace Inversee {
                 var n = parse_one (t);
                 if (n == null) {
                     throw new ParserError.INVALID (
-                        _("Could not parse number: '%s'"), t
+                        _("Invalid number: %s"), t
                     );
                 }
                 result += n;

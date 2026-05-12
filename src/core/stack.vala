@@ -76,8 +76,7 @@ namespace Inversee {
             if (index_from_top < 0
                     || index_from_top >= (int) this.storage.length) {
                 throw new StackError.UNDERFLOW (
-                    _("Index %d out of range (stack size %u)"),
-                    index_from_top, this.storage.length
+                    _("Index %d out of range"), index_from_top
                 );
             }
             uint idx = this.storage.length - 1 - (uint) index_from_top;
@@ -98,10 +97,7 @@ namespace Inversee {
          */
         public void dup2 () throws StackError {
             if (this.storage.length < 2) {
-                throw new StackError.UNDERFLOW (
-                    _("dup2 requires 2 operands (have %u)"),
-                    this.storage.length
-                );
+                throw new StackError.UNDERFLOW (_("dup2 needs 2 operands"));
             }
             uint last = this.storage.length - 1;
             var y = this.storage[last - 1];
@@ -113,10 +109,7 @@ namespace Inversee {
         /** Swap X and Y. */
         public void swap () throws StackError {
             if (this.storage.length < 2) {
-                throw new StackError.UNDERFLOW (
-                    _("swap requires 2 operands (have %u)"),
-                    this.storage.length
-                );
+                throw new StackError.UNDERFLOW (_("swap needs 2 operands"));
             }
             uint last = this.storage.length - 1;
             var top = this.storage[last];
@@ -139,10 +132,7 @@ namespace Inversee {
          */
         public void rot () throws StackError {
             if (this.storage.length < 3) {
-                throw new StackError.UNDERFLOW (
-                    _("rot requires 3 operands (have %u)"),
-                    this.storage.length
-                );
+                throw new StackError.UNDERFLOW (_("rot needs 3 operands"));
             }
             uint third = this.storage.length - 3;
             var z = this.storage[third];
