@@ -83,6 +83,18 @@
   </screenshots>
 
   <releases>
+    <release version="1.0.2" date="2026-05-13">
+      <description>
+        <p>Pre-Flathub polish round.</p>
+        <ul>
+          <li>Accessibility: glyph-only keypad and header-bar buttons now expose AT-SPI accessible names for screen readers.</li>
+          <li>The keyboard-shortcuts dialog is now a native <code>GtkShortcutsWindow</code> with grouped, searchable entries.</li>
+          <li>AppStream metainfo declares minimum display length and recommended input controls (keyboard, pointing, touch).</li>
+          <li>Translation catalogues filled in for all eight locales.</li>
+          <li>The LICENSE file is installed inside the Flatpak at <code>/app/share/licenses/</code> as Flathub requires.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.1" date="2026-05-13">
       <description>
         <p>Maintenance release. Build-pipeline updates only — no user-facing changes.</p>

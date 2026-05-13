@@ -1,7 +1,7 @@
 project(
     'inversee',
     ['vala', 'c'],
-    version: '1.0.1',
+    version: '1.0.2',
     license: 'GPL-3.0-or-later',
     meson_version: '>= 1.1.0',
     default_options: [
@@ -72,6 +72,13 @@ subdir('src')
 if get_option('tests')
     subdir('tests')
 endif
+
+# Flathub requires the source license to be shipped inside the
+# bundle at $FLATPAK_DEST/share/licenses/$FLATPAK_ID/.
+install_data(
+    'LICENSE',
+    install_dir: datadir / 'licenses' / app_id,
+)
 
 gnome.post_install(
     glib_compile_schemas: true,
