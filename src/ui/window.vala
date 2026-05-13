@@ -93,7 +93,7 @@ namespace Inversee {
             var header = new Adw.HeaderBar ();
 
             var undo_b = new Gtk.Button.from_icon_name ("edit-undo-symbolic");
-            undo_b.tooltip_text = _("Undo (Ctrl+Z)");
+            describe (undo_b, _("Undo (Ctrl+Z)"));
             undo_b.clicked.connect (
                 () => this.run_op (() => this.calc.undo ())
             );
@@ -101,17 +101,25 @@ namespace Inversee {
 
             var clipboard_button = new Gtk.MenuButton ();
             clipboard_button.icon_name = "edit-copy-symbolic";
-            clipboard_button.tooltip_text = _("Clipboard");
+            describe (clipboard_button, _("Clipboard"));
             clipboard_button.menu_model = this.build_clipboard_menu ();
             header.pack_start (clipboard_button);
 
             var menu_button = new Gtk.MenuButton ();
             menu_button.icon_name = "open-menu-symbolic";
-            menu_button.tooltip_text = _("Main Menu");
+            describe (menu_button, _("Main Menu"));
             menu_button.menu_model = this.build_menu_model ();
             header.pack_end (menu_button);
 
             return header;
+        }
+
+        // Mirrors Keypad.describe: tooltip for sighted users plus the
+        // AT-SPI accessible label for screen readers.
+        private static void describe (Gtk.Widget w, string description) {
+            w.tooltip_text = description;
+            w.update_property (Gtk.AccessibleProperty.LABEL,
+                               description, -1);
         }
 
         private GLib.MenuModel build_clipboard_menu () {

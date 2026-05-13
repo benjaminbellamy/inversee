@@ -70,44 +70,55 @@ namespace Inversee {
             // Row 1: math functions. Clear takes the rightmost slot
             // that the removed `%` button used to occupy.
             this.add_action_button ("√",   0, 1, 1, 1, {},
-                () => this.calc.apply_unary (UnaryOp.SQRT));
+                () => this.calc.apply_unary (UnaryOp.SQRT),
+                _("Square root"));
             this.add_action_button ("1/x", 1, 1, 1, 1, {},
-                () => this.calc.apply_unary (UnaryOp.INVERSE));
+                () => this.calc.apply_unary (UnaryOp.INVERSE),
+                _("Inverse"));
             this.add_action_button ("x^y", 2, 1, 1, 1, {},
-                () => this.calc.apply_binary (BinaryOp.POW));
+                () => this.calc.apply_binary (BinaryOp.POW),
+                _("Power"));
             this.add_action_button (_("mod"), 3, 1, 1, 1, {},
-                () => this.calc.apply_binary (BinaryOp.MOD));
+                () => this.calc.apply_binary (BinaryOp.MOD),
+                _("Modulo"));
             this.add_action_button ("⌫", 4, 1, 1, 1, {},
-                () => this.calc.backspace ());
+                () => this.calc.backspace (),
+                _("Backspace"));
 
             // Rows 2-5 cols 0-3: digit pad + ÷ × − +.
             this.add_digit_button (7, 0, 2);
             this.add_digit_button (8, 1, 2);
             this.add_digit_button (9, 2, 2);
             this.add_action_button ("÷", 3, 2, 1, 1, { "numeric" },
-                () => this.calc.apply_binary (BinaryOp.DIV));
+                () => this.calc.apply_binary (BinaryOp.DIV),
+                _("Divide"));
 
             this.add_digit_button (4, 0, 3);
             this.add_digit_button (5, 1, 3);
             this.add_digit_button (6, 2, 3);
             this.add_action_button ("×", 3, 3, 1, 1, { "numeric" },
-                () => this.calc.apply_binary (BinaryOp.MUL));
+                () => this.calc.apply_binary (BinaryOp.MUL),
+                _("Multiply"));
 
             this.add_digit_button (1, 0, 4);
             this.add_digit_button (2, 1, 4);
             this.add_digit_button (3, 2, 4);
             this.add_action_button ("−", 3, 4, 1, 1, { "numeric" },
-                () => this.calc.apply_binary (BinaryOp.SUB));
+                () => this.calc.apply_binary (BinaryOp.SUB),
+                _("Subtract"));
 
             this.add_digit_button (0, 0, 5);
             var decimal_b = this.make_button (Localize.decimal_separator (),
                                               { "numeric" });
+            describe (decimal_b, _("Decimal separator"));
             decimal_b.clicked.connect (() => this.calc.append_decimal ());
             this.attach (decimal_b, 1, 5, 1, 1);
             this.add_action_button ("+/−", 2, 5, 1, 1, {},
-                () => this.calc.toggle_sign ());
+                () => this.calc.toggle_sign (),
+                _("Toggle sign"));
             this.add_action_button ("+", 3, 5, 1, 1, { "numeric" },
-                () => this.calc.apply_binary (BinaryOp.ADD));
+                () => this.calc.apply_binary (BinaryOp.ADD),
+                _("Add"));
 
             // Col 4: Clear (row 2), Enter (rows 3-5, tall accent).
             this.add_action_button (_("Clear"), 4, 2, 1, 1,
@@ -157,8 +168,12 @@ namespace Inversee {
                                         int width,
                                         int height,
                                         string[] css_classes,
-                                        owned KeypadAction action) {
+                                        owned KeypadAction action,
+                                        string? description = null) {
             var b = this.make_button (label, css_classes);
+            if (description != null) {
+                describe (b, description);
+            }
             b.clicked.connect (() => {
                 try {
                     action ();
@@ -177,6 +192,15 @@ namespace Inversee {
                 b.add_css_class (c);
             }
             return b;
+        }
+
+        // Sets BOTH the hover tooltip and the AT-SPI accessible name on a
+        // glyph-only button. tooltip_text alone reaches sighted users only;
+        // the accessible-LABEL property is what screen readers announce.
+        private static void describe (Gtk.Widget w, string description) {
+            w.tooltip_text = description;
+            w.update_property (Gtk.AccessibleProperty.LABEL,
+                               description, -1);
         }
     }
 }
