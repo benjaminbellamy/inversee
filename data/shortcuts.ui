@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SPDX-License-Identifier: GPL-3.0-or-later
+  Inversée - Reverse Polish Notation calculator
+  Copyright (C) 2026 Benjamin Bellamy <benjamin@castopod.org>
+-->
+<interface domain="inversee">
+  <object class="GtkShortcutsWindow" id="shortcuts_window">
+    <child>
+      <object class="GtkShortcutsSection">
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="title" translatable="yes">Entry</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">period</property>
+                <property name="title" translatable="yes">Decimal separator</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">Return</property>
+                <property name="title" translatable="yes">Push entry / duplicate X</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">BackSpace</property>
+                <property name="title" translatable="yes">Delete last character / drop X</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="title" translatable="yes">Arithmetic</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">plus</property>
+                <property name="title" translatable="yes">Add</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">minus</property>
+                <property name="title" translatable="yes">Subtract</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">asterisk</property>
+                <property name="title" translatable="yes">Multiply</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">slash</property>
+                <property name="title" translatable="yes">Divide</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">percent</property>
+                <property name="title" translatable="yes">Percent of</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">asciicircum</property>
+                <property name="title" translatable="yes">Power (x^y)</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="title" translatable="yes">Functions</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">r</property>
+                <property name="title" translatable="yes">Square root</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">i</property>
+                <property name="title" translatable="yes">Inverse (1/x)</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">n</property>
+                <property name="title" translatable="yes">Negate (+/-)</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">m</property>
+                <property name="title" translatable="yes">Modulo</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="title" translatable="yes">Stack</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">s</property>
+                <property name="title" translatable="yes">Swap</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">d</property>
+                <property name="title" translatable="yes">Drop</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">t</property>
+                <property name="title" translatable="yes">Rotate</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">Escape</property>
+                <property name="title" translatable="yes">Clear stack</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="title" translatable="yes">Edit</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">&lt;Primary&gt;z</property>
+                <property name="title" translatable="yes">Undo</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">&lt;Primary&gt;c</property>
+                <property name="title" translatable="yes">Copy X</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">&lt;Primary&gt;v</property>
+                <property name="title" translatable="yes">Paste</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

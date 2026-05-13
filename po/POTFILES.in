@@ -2,6 +2,7 @@
 # Keep this list sorted.
 data/fr.benjaminbellamy.Inversee.desktop.in
 data/fr.benjaminbellamy.Inversee.metainfo.xml.in
+data/shortcuts.ui
 src/core/calculator.vala
 src/core/history.vala
 src/core/parser.vala

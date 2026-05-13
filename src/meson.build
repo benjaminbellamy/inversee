@@ -22,7 +22,7 @@ inversee_deps = [
 
 executable(
     'inversee',
-    inversee_sources + [config_vala],
+    inversee_sources + [config_vala, inversee_gresource],
     dependencies: inversee_deps,
     install: true,
     install_dir: bindir,

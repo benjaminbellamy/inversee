@@ -55,6 +55,13 @@ if compile_schemas.found()
     )
 endif
 
+inversee_gresource = gnome.compile_resources(
+    'inversee-resources',
+    'inversee.gresource.xml',
+    source_dir: meson.current_source_dir(),
+    dependencies: files('shortcuts.ui'),
+)
+
 install_data(
     'icons' / 'hicolor' / 'scalable' / 'apps' / '@0@.svg'.format(app_id),
     install_dir: datadir / 'icons' / 'hicolor' / 'scalable' / 'apps',

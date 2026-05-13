@@ -274,71 +274,28 @@ namespace Inversee {
         }
 
         private void show_shortcuts () {
-            var dialog = new Adw.Window ();
-            dialog.transient_for = this;
-            dialog.modal = true;
-            dialog.set_default_size (420, 560);
-            dialog.title = _("Keyboard Shortcuts");
-
-            var header = new Adw.HeaderBar ();
-
-            var grid = new Gtk.Grid ();
-            grid.row_spacing = 6;
-            grid.column_spacing = 24;
-            grid.margin_top = 18;
-            grid.margin_bottom = 18;
-            grid.margin_start = 18;
-            grid.margin_end = 18;
-
-            int row = 0;
-            this.add_shortcut_row (grid, ref row, "0–9",          _("Digit entry"));
-            this.add_shortcut_row (grid, ref row, ". / ,",        _("Decimal separator"));
-            this.add_shortcut_row (grid, ref row, _("Enter"),     _("Push entry / duplicate X"));
-            this.add_shortcut_row (grid, ref row, _("Backspace"), _("Delete last char / drop X"));
-            this.add_shortcut_row (grid, ref row, "+ − × ÷",      _("Arithmetic"));
-            this.add_shortcut_row (grid, ref row, "%",            _("Percent of"));
-            this.add_shortcut_row (grid, ref row, "^",            _("Power (x^y)"));
-            this.add_shortcut_row (grid, ref row, "r",            _("Square root"));
-            this.add_shortcut_row (grid, ref row, "i",            _("Inverse (1/x)"));
-            this.add_shortcut_row (grid, ref row, "n",            _("Negate (+/−)"));
-            this.add_shortcut_row (grid, ref row, "m",            _("Modulo"));
-            this.add_shortcut_row (grid, ref row, "s",            _("Swap"));
-            this.add_shortcut_row (grid, ref row, "d",            _("Drop"));
-            this.add_shortcut_row (grid, ref row, "t",            _("Rotate"));
-            this.add_shortcut_row (grid, ref row, _("Escape"),    _("Clear stack"));
-            this.add_shortcut_row (grid, ref row, "Ctrl+Z",       _("Undo"));
-            this.add_shortcut_row (grid, ref row, "Ctrl+C",       _("Copy X"));
-            this.add_shortcut_row (grid, ref row, "Ctrl+V",       _("Paste"));
-
-            var scrolled = new Gtk.ScrolledWindow ();
-            scrolled.hexpand = true;
-            scrolled.vexpand = true;
-            scrolled.set_child (grid);
-
-            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            box.append (header);
-            box.append (scrolled);
-            dialog.set_content (box);
-            dialog.present ();
-        }
-
-        private void add_shortcut_row (Gtk.Grid grid,
-                                       ref int row,
-                                       string key,
-                                       string description) {
-            var key_label = new Gtk.Label (key);
-            key_label.add_css_class ("numeric");
-            key_label.add_css_class ("monospace");
-            key_label.xalign = 0;
-
-            var desc_label = new Gtk.Label (description);
-            desc_label.xalign = 0;
-            desc_label.hexpand = true;
-            desc_label.wrap = true;
-
-            grid.attach (key_label, 0, row, 1, 1);
-            grid.attach (desc_label, 1, row, 1, 1);
-            row++;
+            // The UI is loaded from data/shortcuts.ui via the
+            // inversee-resources GResource bundle compiled into the
+            // binary. Strings in the .ui file are translated through
+            // the `domain="inversee"` attribute on its <interface>
+            // root, which routes lookups through our gettext catalog.
+            var builder = new Gtk.Builder ();
+            try {
+                builder.add_from_resource (
+                    "/fr/benjaminbellamy/Inversee/shortcuts.ui"
+                );
+            } catch (Error e) {
+                warning ("could not load shortcuts UI: %s", e.message);
+                return;
+            }
+            var sw = builder.get_object ("shortcuts_window")
+                     as Gtk.ShortcutsWindow;
+            if (sw == null) {
+                warning ("shortcuts_window object missing from UI");
+                return;
+            }
+            sw.transient_for = this;
+            sw.present ();
         }
 
         // === Keyboard shortcuts (window-wide) ===
