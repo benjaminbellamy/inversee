@@ -41,26 +41,6 @@ jobs:
           cache-key: flatpak-builder-${{ github.sha }}
           run-tests: true
 
-      - name: Dump build logs on failure
-        if: failure()
-        run: |
-          for f in $(find .flatpak-builder/build -name config.log); do
-            echo "=========================================================="
-            echo "===  $f"
-            echo "===  (lines around reliability / conftest / error)"
-            echo "=========================================================="
-            grep -nE 'conftest|reliab|long long|configure:[0-9]+: (error|result):' "$f" \
-              | head -200 || true
-            echo
-            echo "===  …and the trailing 60 lines of the same file ==="
-            tail -60 "$f"
-            echo
-          done
-          echo "=== meson logs ==="
-          find .flatpak-builder/build -name 'meson-log.txt' -print -exec cat {} +
-          echo "=== build dirs ==="
-          ls -la .flatpak-builder/build || true
-
       - name: Rename bundle for tagged release
         if: startsWith(github.ref, 'refs/tags/')
         run: mv inversee.flatpak inversee-${{ github.ref_name }}.flatpak
