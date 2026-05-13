@@ -7,10 +7,9 @@ name: Flatpak
 
 on:
   push:
-    branches: ['**']
+    branches: [main]
     tags: ['*']
   pull_request:
-    branches: ['**']
 
 permissions:
   contents: write   # required to upload assets to a Release on tag push
@@ -38,7 +37,7 @@ jobs:
         with:
           bundle: inversee.flatpak
           manifest-path: build-aux/fr.benjaminbellamy.Inversee.yaml
-          cache-key: flatpak-builder-${{ github.sha }}
+          cache-key: flatpak-builder-${{ github.ref }}
           run-tests: true
 
       - name: Rename bundle for tagged release
