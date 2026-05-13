@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: inversee 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-12 23:09+0200\n"
+"POT-Creation-Date: 2026-05-13 21:55+0200\n"
 "PO-Revision-Date: 2026-05-12 00:00+0000\n"
 "Last-Translator: Benjamin Bellamy <benjamin@castopod.org>\n"
 "Language-Team: German\n"
@@ -33,19 +33,215 @@ msgstr "RPN;UPN;Rechner;Taschenrechner;HP;Mathematik;"
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:15
 msgid "Inversée is a Reverse Polish Notation (RPN) calculator with an unbounded stack, designed to look and behave like a native GNOME application."
-msgstr ""
+msgstr "Inversée ist ein Taschenrechner mit umgekehrter polnischer Notation (UPN) und unbegrenztem Stapel, der wie eine native GNOME-Anwendung aussehen und sich verhalten soll."
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:19
 msgid "The full stack is visible at all times, values are stored as arbitrary precision MPFR floats, and the locale-aware display follows your system settings."
-msgstr ""
+msgstr "Der gesamte Stapel ist jederzeit sichtbar, Werte werden als MPFR-Gleitkommazahlen mit beliebiger Genauigkeit gespeichert, und die gebietsschemabewusste Anzeige folgt den Systemeinstellungen."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:32
+msgid "RPN"
+msgstr "UPN"
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:33
+msgid "calculator"
+msgstr "Rechner"
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:34
+msgid "reverse"
+msgstr "umgekehrt"
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:35
+msgid "polish"
+msgstr "polnisch"
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:36
+msgid "notation"
+msgstr "Notation"
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:37
+msgid "HP"
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:38
+msgid "maths"
+msgstr "Mathematik"
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:52
 msgid "Benjamin Bellamy"
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:52
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:67
+msgid "The main window in light mode."
+msgstr "Das Hauptfenster im hellen Modus."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:71
+msgid "The main window in dark mode."
+msgstr "Das Hauptfenster im dunklen Modus."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:78
+msgid "Maintenance release. Build-pipeline updates only — no user-facing changes."
+msgstr "Wartungsversion. Nur Aktualisierungen der Build-Pipeline — keine für den Benutzer sichtbaren Änderungen."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:80
+msgid "GMP and MPFR build with <code>-std=gnu17</code> so they configure cleanly under freedesktop SDK 25.08 (GCC 15)."
+msgstr "GMP und MPFR werden mit <code>-std=gnu17</code> kompiliert, damit sie unter freedesktop SDK 25.08 (GCC 15) sauber konfigurieren."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:81
+msgid "Runtime moved from end-of-life GNOME 48 to supported GNOME 49."
+msgstr "Laufzeit von der eingestellten GNOME 48 auf unterstützte GNOME 49 verschoben."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:82
+msgid "AppStream metainfo: categories, keywords, update contact, and a second screenshot for dark mode."
+msgstr "AppStream-Metainfo: Kategorien, Schlüsselwörter, Update-Kontakt und ein zweiter Screenshot für den dunklen Modus."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:83
+msgid "CI: tagged pushes now auto-upload the Flatpak bundle to the matching GitHub Release."
+msgstr "CI: Tag-Pushes laden den Flatpak-Bundle jetzt automatisch in die passende GitHub-Veröffentlichung hoch."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:89
+msgid "First public release."
+msgstr "Erste öffentliche Veröffentlichung."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:91
+msgid "Unbounded RPN stack with swap, drop, rot, dup, dup2 and clear."
+msgstr "Unbegrenzter UPN-Stapel mit swap, drop, rot, dup, dup2 und clear."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:92
+msgid "Arbitrary-precision arithmetic via MPFR (128-bit internal)."
+msgstr "Arithmetik mit beliebiger Genauigkeit über MPFR (128 Bit intern)."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:93
+msgid "Full operation set: + − × ÷ mod %, x^y, √, 1/x, +/−."
+msgstr "Vollständiger Operationssatz: + − × ÷ mod %, x^y, √, 1/x, +/−."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:94
+msgid "Unbounded undo, capped at 1000 entries per session."
+msgstr "Unbegrenztes Rückgängigmachen, auf 1000 Einträge pro Sitzung begrenzt."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:95
+msgid "Locale-aware display, locale-tolerant clipboard paste."
+msgstr "Gebietsschemabewusste Anzeige, gebietsschematolerantes Einfügen aus der Zwischenablage."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:96
+msgid "Clipboard menu: paste, copy X, copy whole stack."
+msgstr "Zwischenablage-Menü: einfügen, X kopieren, ganzen Stapel kopieren."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:97
+msgid "Session persistence to $XDG_DATA_HOME/inversee/state.json."
+msgstr "Sitzungspersistenz nach $XDG_DATA_HOME/inversee/state.json."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:98
+msgid "Window geometry and chosen UI language persisted via GSettings."
+msgstr "Fenstergeometrie und gewählte UI-Sprache werden über GSettings gespeichert."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:99
+msgid "Translations: English, French, German, Italian, Spanish, Dutch, Polish, Portuguese."
+msgstr "Übersetzungen: Englisch, Französisch, Deutsch, Italienisch, Spanisch, Niederländisch, Polnisch, Portugiesisch."
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:105
 msgid "Initial scaffold."
-msgstr ""
+msgstr "Erstes Gerüst."
+
+#: data/shortcuts.ui:13
+msgid "Entry"
+msgstr "Eingabe"
+
+#: data/shortcuts.ui:17 src/ui/keypad.vala:113
+msgid "Decimal separator"
+msgstr "Dezimaltrennzeichen"
+
+#: data/shortcuts.ui:23
+msgid "Push entry / duplicate X"
+msgstr "Eingabe ablegen / X duplizieren"
+
+#: data/shortcuts.ui:29
+msgid "Delete last character / drop X"
+msgstr "Letztes Zeichen löschen / X verwerfen"
+
+#: data/shortcuts.ui:36
+msgid "Arithmetic"
+msgstr "Arithmetik"
+
+#: data/shortcuts.ui:40 src/ui/keypad.vala:121
+msgid "Add"
+msgstr "Addieren"
+
+#: data/shortcuts.ui:46 src/ui/keypad.vala:108
+msgid "Subtract"
+msgstr "Subtrahieren"
+
+#: data/shortcuts.ui:52 src/ui/keypad.vala:101
+msgid "Multiply"
+msgstr "Multiplizieren"
+
+#: data/shortcuts.ui:58 src/ui/keypad.vala:94
+msgid "Divide"
+msgstr "Dividieren"
+
+#: data/shortcuts.ui:64
+msgid "Percent of"
+msgstr "Prozent von"
+
+#: data/shortcuts.ui:70
+msgid "Power (x^y)"
+msgstr "Potenz (x^y)"
+
+#: data/shortcuts.ui:77
+msgid "Functions"
+msgstr "Funktionen"
+
+#: data/shortcuts.ui:81 src/ui/keypad.vala:74
+msgid "Square root"
+msgstr "Quadratwurzel"
+
+#: data/shortcuts.ui:87
+msgid "Inverse (1/x)"
+msgstr "Kehrwert (1/x)"
+
+#: data/shortcuts.ui:93
+msgid "Negate (+/-)"
+msgstr "Vorzeichen umkehren (+/−)"
+
+#: data/shortcuts.ui:99 src/ui/keypad.vala:83
+msgid "Modulo"
+msgstr "Modulo"
+
+#: data/shortcuts.ui:106
+msgid "Stack"
+msgstr "Stapel"
+
+#: data/shortcuts.ui:110
+msgid "Swap"
+msgstr "Tauschen"
+
+#: data/shortcuts.ui:116
+msgid "Drop"
+msgstr "Verwerfen"
+
+#: data/shortcuts.ui:122
+msgid "Rotate"
+msgstr "Rotieren"
+
+#: data/shortcuts.ui:128
+msgid "Clear stack"
+msgstr "Stapel löschen"
+
+#: data/shortcuts.ui:135
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: data/shortcuts.ui:139
+msgid "Undo"
+msgstr "Rückgängig"
+
+#: data/shortcuts.ui:145
+msgid "Copy X"
+msgstr "X kopieren"
+
+#: data/shortcuts.ui:151 src/ui/window.vala:127
+msgid "Paste"
+msgstr "Einfügen"
 
 #: src/core/calculator.vala:170
 msgid "Needs 2 operands"
@@ -160,16 +356,32 @@ msgstr ""
 msgid "DROP"
 msgstr ""
 
-#: src/ui/keypad.vala:78
+#: src/ui/keypad.vala:77
+msgid "Inverse"
+msgstr "Kehrwert (1/x)"
+
+#: src/ui/keypad.vala:80
+msgid "Power"
+msgstr "Potenz (x^y)"
+
+#: src/ui/keypad.vala:81
 msgid "mod"
 msgstr ""
 
+#: src/ui/keypad.vala:86
+msgid "Backspace"
+msgstr "Rücktaste"
+
+#: src/ui/keypad.vala:118
+msgid "Toggle sign"
+msgstr "Vorzeichen umkehren"
+
 #. Col 4: Clear (row 2), Enter (rows 3-5, tall accent).
-#: src/ui/keypad.vala:113
+#: src/ui/keypad.vala:124
 msgid "Clear"
 msgstr ""
 
-#: src/ui/keypad.vala:117 src/ui/window.vala:284
+#: src/ui/keypad.vala:128
 msgid "Enter"
 msgstr ""
 
@@ -189,145 +401,71 @@ msgstr "Zwischenablage"
 msgid "Main Menu"
 msgstr "Hauptmenü"
 
-#: src/ui/window.vala:119 src/ui/window.vala:299
-msgid "Paste"
-msgstr "Einfügen"
-
-#: src/ui/window.vala:120
+#: src/ui/window.vala:128
 msgid "Copy"
 msgstr "Kopieren"
 
-#: src/ui/window.vala:121
+#: src/ui/window.vala:129
 msgid "Copy stack"
 msgstr "Stapel kopieren"
 
-#: src/ui/window.vala:127
+#: src/ui/window.vala:135
 msgid "Auto (system)"
 msgstr "Auto (System)"
 
-#: src/ui/window.vala:136
+#: src/ui/window.vala:146
 msgid "Language"
 msgstr "Sprache"
 
-#: src/ui/window.vala:139 src/ui/window.vala:269
+#: src/ui/window.vala:149
 msgid "Keyboard Shortcuts"
 msgstr "Tastenkürzel"
 
-#: src/ui/window.vala:140
+#: src/ui/window.vala:151
 msgid "About Inversée"
 msgstr "Über Inversée"
 
-#: src/ui/window.vala:143 src/ui/window.vala:207
+#: src/ui/window.vala:155 src/ui/window.vala:219
 msgid "Quit and reset"
 msgstr "Beenden und zurücksetzen"
 
-#: src/ui/window.vala:193
+#: src/ui/window.vala:205
 msgid "Restart Inversée to apply the language change."
 msgstr "Starten Sie Inversée neu, um die Sprachänderung anzuwenden."
 
-#: src/ui/window.vala:202
+#: src/ui/window.vala:214
 msgid "Quit and reset?"
 msgstr "Beenden und zurücksetzen?"
 
-#: src/ui/window.vala:203
+#: src/ui/window.vala:215
 msgid "Inversée will quit. The stack, undo history, saved language, and window size will all be cleared."
 msgstr "Inversée wird beendet. Stapel, Rückgängig-Verlauf, gespeicherte Sprache und Fenstergröße werden alle gelöscht."
 
-#: src/ui/window.vala:206
+#: src/ui/window.vala:218
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/ui/window.vala:258
+#: src/ui/window.vala:270
 msgid "A Reverse Polish Notation calculator"
 msgstr "Ein Rechner mit umgekehrter polnischer Notation"
 
-#: src/ui/window.vala:282
-msgid "Digit entry"
-msgstr "Ziffereingabe"
-
-#: src/ui/window.vala:283
-msgid "Decimal separator"
-msgstr "Dezimaltrennzeichen"
-
-#: src/ui/window.vala:284
-msgid "Push entry / duplicate X"
-msgstr "Eingabe ablegen / X duplizieren"
-
-#: src/ui/window.vala:285
-msgid "Backspace"
-msgstr "Rücktaste"
-
-#: src/ui/window.vala:285
-msgid "Delete last char / drop X"
-msgstr "Letztes Zeichen löschen / X verwerfen"
-
-#: src/ui/window.vala:286
-msgid "Arithmetic"
-msgstr "Arithmetik"
-
-#: src/ui/window.vala:287
-msgid "Percent of"
-msgstr "Prozent von"
-
-#: src/ui/window.vala:288
-msgid "Power (x^y)"
-msgstr "Potenz (x^y)"
-
-#: src/ui/window.vala:289
-msgid "Square root"
-msgstr "Quadratwurzel"
-
-#: src/ui/window.vala:290
-msgid "Inverse (1/x)"
-msgstr "Kehrwert (1/x)"
-
-#: src/ui/window.vala:291
-msgid "Negate (+/−)"
-msgstr "Vorzeichen umkehren (+/−)"
-
-#: src/ui/window.vala:292
-msgid "Modulo"
-msgstr "Modulo"
-
-#: src/ui/window.vala:293
-msgid "Swap"
-msgstr "Tauschen"
-
-#: src/ui/window.vala:294
-msgid "Drop"
-msgstr "Verwerfen"
-
-#: src/ui/window.vala:295
-msgid "Rotate"
-msgstr "Rotieren"
-
-#: src/ui/window.vala:296
-msgid "Escape"
-msgstr "Esc"
-
-#: src/ui/window.vala:296
-msgid "Clear stack"
-msgstr "Stapel löschen"
-
-#: src/ui/window.vala:297
-msgid "Undo"
-msgstr "Rückgängig"
-
-#: src/ui/window.vala:298
-msgid "Copy X"
-msgstr "X kopieren"
-
-#: src/ui/window.vala:483
+#: src/ui/window.vala:452
 msgid "Copied"
 msgstr "Kopiert"
 
-#: src/ui/window.vala:490 src/ui/window.vala:503
+#: src/ui/window.vala:459 src/ui/window.vala:472
 msgid "Nothing to copy"
 msgstr "Nichts zu kopieren"
 
-#: src/ui/window.vala:522
+#: src/ui/window.vala:491
 msgid "Stack copied"
 msgstr "Stapel kopiert"
+
+#~ msgid "Digit entry"
+#~ msgstr "Ziffereingabe"
+
+#~ msgid "Escape"
+#~ msgstr "Esc"
 
 #, c-format
 #~ msgid "Binary operation requires 2 operands (have %d)"
