@@ -73,6 +73,17 @@
   </screenshots>
 
   <releases>
+    <release version="1.0.1" date="2026-05-13">
+      <description>
+        <p>Maintenance release. Build-pipeline updates only — no user-facing changes.</p>
+        <ul>
+          <li>GMP and MPFR build with <code>-std=gnu17</code> so they configure cleanly under freedesktop SDK 25.08 (GCC 15).</li>
+          <li>Runtime moved from end-of-life GNOME 48 to supported GNOME 49.</li>
+          <li>AppStream metainfo: categories, keywords, update contact, and a second screenshot for dark mode.</li>
+          <li>CI: tagged pushes now auto-upload the Flatpak bundle to the matching GitHub Release.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.0" date="2026-05-13">
       <description>
         <p>First public release.</p>
