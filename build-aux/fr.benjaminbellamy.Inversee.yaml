@@ -32,6 +32,18 @@ cleanup:
 
 modules:
   - name: gmp
+    build-options:
+      # GCC 15 (the default in freedesktop SDK 25.08) interprets a
+      # function declared with an empty parameter list "g()" as
+      # taking zero arguments, per C23. GMP 6.3.0's autoconf test
+      # program uses K&R-style empty parameter lists and calls them
+      # with arguments, so the "long long reliability test 1" probe
+      # never compiles. Pin the C standard to gnu17 for this module
+      # so the older interpretation ("unspecified arguments") is
+      # restored. We append rather than replace, so the SDK's
+      # hardening CFLAGS still apply.
+      cflags: -std=gnu17
+      cxxflags: -std=gnu++17
     config-opts:
       - --enable-cxx
       - --disable-static
@@ -44,6 +56,10 @@ modules:
         sha256: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
 
   - name: mpfr
+    build-options:
+      # Same C23 vs K&R issue as gmp above. MPFR 4.2.1 predates the
+      # change in GCC 15 defaults, so pin gnu17 here too.
+      cflags: -std=gnu17
     config-opts:
       - --disable-static
     sources:
