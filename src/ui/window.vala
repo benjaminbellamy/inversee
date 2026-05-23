@@ -143,6 +143,8 @@ namespace Inversee {
             var section_bottom = new GLib.Menu ();
             section_bottom.append ("⌨  " + _("Keyboard Shortcuts"),
                                    "win.shortcuts");
+            section_bottom.append ("🚀  " + _("Reassign calculator key…"),
+                                   "win.reassign-calc-key");
             section_bottom.append ("📝  " + _("About Inversée"),
                                    "win.about");
 
@@ -181,6 +183,11 @@ namespace Inversee {
             shortcuts_action.activate.connect (this.show_shortcuts);
             this.add_action (shortcuts_action);
 
+            var reassign_action = new SimpleAction ("reassign-calc-key",
+                                                    null);
+            reassign_action.activate.connect (this.show_reassign_calc_key);
+            this.add_action (reassign_action);
+
             var reset_action = new SimpleAction ("reset", null);
             reset_action.activate.connect (this.confirm_reset);
             this.add_action (reset_action);
@@ -201,6 +208,106 @@ namespace Inversee {
                 );
             });
             this.add_action (language_action);
+        }
+
+        private void show_reassign_calc_key () {
+            // Custom Adw.Window instead of Adw.MessageDialog: the
+            // latter destroys itself on every response, but the user
+            // needs the instructions to remain visible while they work
+            // through GNOME Settings next to the dialog.
+            var win = new Adw.Window ();
+            win.set_transient_for (this);
+            win.set_modal (true);
+            win.default_width = 520;
+            win.resizable = false;
+            win.title =
+                _("Use your keyboard's Calculator key for Inversée");
+
+            var header = new Adw.HeaderBar ();
+
+            var body_label = new Gtk.Label (
+                _("GNOME launches the default calculator when you press"
+                  + " your keyboard's Calculator key. To use Inversée"
+                  + " instead:\n\n"
+                  + "1. Open Settings → Keyboard → View and Customize"
+                  + " Shortcuts → Launchers, and clear the existing"
+                  + " Launch Calculator shortcut.\n\n"
+                  + "2. Under Custom Shortcuts, add a new shortcut that"
+                  + " runs the command below, and when prompted to set"
+                  + " the keys, press your keyboard's Calculator key."));
+            body_label.wrap = true;
+            body_label.xalign = 0;
+
+            var body_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
+            body_box.margin_start = 24;
+            body_box.margin_end = 24;
+            body_box.margin_top = 12;
+            body_box.margin_bottom = 12;
+            body_box.append (body_label);
+            body_box.append (this.make_copyable_command (
+                "flatpak run fr.benjaminbellamy.Inversee"));
+
+            var got_it = new Gtk.Button.with_label (_("Got it"));
+            got_it.clicked.connect (() => win.close ());
+
+            var open_settings = new Gtk.Button.with_label (
+                _("Open Settings"));
+            open_settings.add_css_class ("suggested-action");
+            open_settings.clicked.connect (() => {
+                try {
+                    var info = AppInfo.create_from_commandline (
+                        "gnome-control-center keyboard", null,
+                        AppInfoCreateFlags.NONE);
+                    info.launch (null, null);
+                } catch (Error e) {
+                    // Sandboxed Flatpak or no gnome-control-center on
+                    // PATH — the dialog body still tells the user how
+                    // to proceed manually.
+                }
+            });
+
+            var actions = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 8);
+            actions.halign = Gtk.Align.END;
+            actions.margin_start = 24;
+            actions.margin_end = 24;
+            actions.margin_bottom = 16;
+            actions.append (got_it);
+            actions.append (open_settings);
+
+            var outer = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            outer.append (header);
+            outer.append (body_box);
+            outer.append (actions);
+
+            win.set_content (outer);
+            win.present ();
+        }
+
+        private Gtk.Button make_copyable_command (string command) {
+            var button = new Gtk.Button ();
+            button.add_css_class ("flat");
+
+            var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 8);
+            var icon = new Gtk.Image.from_icon_name ("edit-copy-symbolic");
+            var label = new Gtk.Label (command);
+            label.add_css_class ("numeric");
+            label.hexpand = true;
+            label.xalign = 0;
+            box.append (icon);
+            box.append (label);
+            button.set_child (box);
+
+            // Swap only the icon (not the label) on click — keeps the
+            // button width fixed so the dialog/window doesn't reflow.
+            button.clicked.connect (() => {
+                button.get_clipboard ().set_text (command);
+                icon.icon_name = "object-select-symbolic";
+                Timeout.add_seconds (1, () => {
+                    icon.icon_name = "edit-copy-symbolic";
+                    return Source.REMOVE;
+                });
+            });
+            return button;
         }
 
         private void confirm_reset () {
@@ -262,7 +369,10 @@ namespace Inversee {
                 "https://github.com/benjaminbellamy/inversee/issues";
             about.copyright = "© 2026 Benjamin Bellamy";
             about.license_type = Gtk.License.GPL_3_0;
-            about.comments = _("A Reverse Polish Notation calculator");
+            about.comments = _("A Reverse Polish Notation calculator.\n"
+                + "Tip: the menu's “Reassign calculator key…” entry"
+                + " walks you through binding your keyboard's Calculator"
+                + " key to Inversée.");
             about.transient_for = this;
             about.modal = true;
             about.present ();
