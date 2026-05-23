@@ -131,7 +131,9 @@ namespace Inversee {
             idx.xalign = 0;
             idx.width_chars = 3;
 
-            var val = new Gtk.Label (Localize.format_number (display));
+            string localized = Localize.format_number (display);
+
+            var val = new Gtk.Label (localized);
             val.add_css_class ("numeric");
             val.add_css_class ("title-3");
             val.xalign = 1;
@@ -143,7 +145,6 @@ namespace Inversee {
             hbox.append (val);
             row.set_child (hbox);
 
-            string localized = Localize.format_number (display);
             string accessible_label;
             switch (index_from_top) {
                 case 1:
