@@ -65,6 +65,15 @@ history persist across launches.
 The same shortcuts are reachable from the on-screen keypad and the
 hamburger menu's **Keyboard Shortcuts** dialog.
 
+### Using your keyboard's Calculator key
+
+Many keyboards expose a Calculator key that GNOME binds to
+`gnome-calculator` by default. To use Inversée instead, open the
+hamburger menu and pick **Reassign calculator key…** — the dialog
+walks you through GNOME Settings → Keyboard, clearing the existing
+Launch Calculator shortcut and adding a Custom Shortcut that runs
+Inversée when you press the key.
+
 ## Build
 
 ### Local (host)
