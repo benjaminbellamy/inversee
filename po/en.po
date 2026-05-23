@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: inversee 0.1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-13 21:55+0200\n"
+"Report-Msgid-Bugs-To: benjamin@castopod.org\n"
+"POT-Creation-Date: 2026-05-23 11:37+0200\n"
 "PO-Revision-Date: 2026-05-12 00:00+0000\n"
 "Last-Translator: Benjamin Bellamy <benjamin@castopod.org>\n"
 "Language-Team: English\n"
@@ -32,11 +32,16 @@ msgid "RPN;calculator;reverse;polish;notation;HP;maths;"
 msgstr ""
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:15
-msgid "Inversée is a Reverse Polish Notation (RPN) calculator with an unbounded stack, designed to look and behave like a native GNOME application."
+msgid ""
+"Inversée is a Reverse Polish Notation (RPN) calculator with an unbounded "
+"stack, designed to look and behave like a native GNOME application."
 msgstr ""
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:19
-msgid "The full stack is visible at all times, values are stored as arbitrary precision MPFR floats, and the locale-aware display follows your system settings."
+msgid ""
+"The full stack is visible at all times, values are stored as arbitrary "
+"precision MPFR floats, and the locale-aware display follows your system "
+"settings."
 msgstr ""
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:32
@@ -71,75 +76,116 @@ msgstr ""
 msgid "Benjamin Bellamy"
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:67
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:77
 msgid "The main window in light mode."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:71
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:81
 msgid "The main window in dark mode."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:78
-msgid "Maintenance release. Build-pipeline updates only — no user-facing changes."
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:88
+msgid "Pre-Flathub polish round."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:80
-msgid "GMP and MPFR build with <code>-std=gnu17</code> so they configure cleanly under freedesktop SDK 25.08 (GCC 15)."
-msgstr ""
-
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:81
-msgid "Runtime moved from end-of-life GNOME 48 to supported GNOME 49."
-msgstr ""
-
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:82
-msgid "AppStream metainfo: categories, keywords, update contact, and a second screenshot for dark mode."
-msgstr ""
-
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:83
-msgid "CI: tagged pushes now auto-upload the Flatpak bundle to the matching GitHub Release."
-msgstr ""
-
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:89
-msgid "First public release."
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:90
+msgid ""
+"Accessibility: glyph-only keypad and header-bar buttons now expose AT-SPI "
+"accessible names for screen readers."
 msgstr ""
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:91
-msgid "Unbounded RPN stack with swap, drop, rot, dup, dup2 and clear."
+msgid ""
+"The keyboard-shortcuts dialog is now a native <code>GtkShortcutsWindow</"
+"code> with grouped, searchable entries."
 msgstr ""
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:92
-msgid "Arbitrary-precision arithmetic via MPFR (128-bit internal)."
+msgid ""
+"AppStream metainfo declares minimum display length and recommended input "
+"controls (keyboard, pointing, touch)."
 msgstr ""
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:93
-msgid "Full operation set: + − × ÷ mod %, x^y, √, 1/x, +/−."
+msgid "Translation catalogues filled in for all eight locales."
 msgstr ""
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:94
-msgid "Unbounded undo, capped at 1000 entries per session."
+msgid ""
+"The LICENSE file is installed inside the Flatpak at <code>/app/share/"
+"licenses/</code> as Flathub requires."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:95
-msgid "Locale-aware display, locale-tolerant clipboard paste."
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:100
+msgid ""
+"Maintenance release. Build-pipeline updates only — no user-facing changes."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:96
-msgid "Clipboard menu: paste, copy X, copy whole stack."
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:102
+msgid ""
+"GMP and MPFR build with <code>-std=gnu17</code> so they configure cleanly "
+"under freedesktop SDK 25.08 (GCC 15)."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:97
-msgid "Session persistence to $XDG_DATA_HOME/inversee/state.json."
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:103
+msgid "Runtime moved from end-of-life GNOME 48 to supported GNOME 49."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:98
-msgid "Window geometry and chosen UI language persisted via GSettings."
-msgstr ""
-
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:99
-msgid "Translations: English, French, German, Italian, Spanish, Dutch, Polish, Portuguese."
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:104
+msgid ""
+"AppStream metainfo: categories, keywords, update contact, and a second "
+"screenshot for dark mode."
 msgstr ""
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:105
+msgid ""
+"CI: tagged pushes now auto-upload the Flatpak bundle to the matching GitHub "
+"Release."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:111
+msgid "First public release."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:113
+msgid "Unbounded RPN stack with swap, drop, rot, dup, dup2 and clear."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:114
+msgid "Arbitrary-precision arithmetic via MPFR (128-bit internal)."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:115
+msgid "Full operation set: + − × ÷ mod %, x^y, √, 1/x, +/−."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:116
+msgid "Unbounded undo, capped at 1000 entries per session."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:117
+msgid "Locale-aware display, locale-tolerant clipboard paste."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:118
+msgid "Clipboard menu: paste, copy X, copy whole stack."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:119
+msgid "Session persistence to $XDG_DATA_HOME/inversee/state.json."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:120
+msgid "Window geometry and chosen UI language persisted via GSettings."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:121
+msgid ""
+"Translations: English, French, German, Italian, Spanish, Dutch, Polish, "
+"Portuguese."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:127
 msgid "Initial scaffold."
 msgstr ""
 
@@ -334,8 +380,10 @@ msgstr ""
 msgid "rot needs 3 operands"
 msgstr ""
 
-#. Row 0: stack ops, uppercase, flat (no chrome) for a
-#. lighter visual weight than the chunky digit/math buttons.
+#: src/ui/entry_view.vala:60
+msgid "Current entry"
+msgstr "Current entry"
+
 #: src/ui/keypad.vala:59
 msgid "SWAP"
 msgstr ""
@@ -376,7 +424,6 @@ msgstr ""
 msgid "Toggle sign"
 msgstr ""
 
-#. Col 4: Clear (row 2), Enter (rows 3-5, tall accent).
 #: src/ui/keypad.vala:124
 msgid "Clear"
 msgstr ""
@@ -388,6 +435,28 @@ msgstr ""
 #: src/ui/stack_view.vala:59
 msgid "Stack empty"
 msgstr ""
+
+#: src/ui/stack_view.vala:150
+#, c-format
+msgid "X register, %s"
+msgstr "X register, %s"
+
+#: src/ui/stack_view.vala:153
+#, c-format
+msgid "Y register, %s"
+msgstr "Y register, %s"
+
+#: src/ui/stack_view.vala:156
+#, c-format
+msgid "Z register, %s"
+msgstr "Z register, %s"
+
+#. Translators: %d is the 1-based level from the top of
+#. * the stack (4 or more); %s is the formatted value.
+#: src/ui/stack_view.vala:161
+#, c-format
+msgid "Stack level %d, %s"
+msgstr "Stack level %d, %s"
 
 #: src/ui/window.vala:96
 msgid "Undo (Ctrl+Z)"
@@ -438,7 +507,9 @@ msgid "Quit and reset?"
 msgstr ""
 
 #: src/ui/window.vala:215
-msgid "Inversée will quit. The stack, undo history, saved language, and window size will all be cleared."
+msgid ""
+"Inversée will quit. The stack, undo history, saved language, and window size "
+"will all be cleared."
 msgstr ""
 
 #: src/ui/window.vala:218
@@ -449,14 +520,14 @@ msgstr ""
 msgid "A Reverse Polish Notation calculator"
 msgstr ""
 
-#: src/ui/window.vala:452
+#: src/ui/window.vala:463
 msgid "Copied"
 msgstr ""
 
-#: src/ui/window.vala:459 src/ui/window.vala:472
+#: src/ui/window.vala:469 src/ui/window.vala:482
 msgid "Nothing to copy"
 msgstr ""
 
-#: src/ui/window.vala:491
+#: src/ui/window.vala:501
 msgid "Stack copied"
 msgstr ""
