@@ -44,6 +44,7 @@ namespace Inversee {
                 column_homogeneous: true
             );
             this.calc = calc;
+            this.add_css_class ("keypad-grid");
 
             this.margin_start = 12;
             this.margin_end = 12;
@@ -122,7 +123,7 @@ namespace Inversee {
 
             // Col 4: Clear (row 2), Enter (rows 3-5, tall accent).
             this.add_action_button (_("Clear"), 4, 2, 1, 1,
-                                    { "destructive-action" },
+                                    { "clear-key" },
                 () => this.calc.clear_stack ());
 
             var enter_b = this.make_button (_("Enter"),

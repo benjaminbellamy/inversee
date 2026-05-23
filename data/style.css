@@ -1,0 +1,41 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+/*
+ * Inversée - Reverse Polish Notation calculator
+ * Copyright (C) 2026 Benjamin Bellamy <benjamin@castopod.org>
+ */
+
+/* Slightly rounder corners on every keypad button than Adwaita's
+ * default — keeps the pill-button feel without going fully circular.
+ * Enter and Clear are rounder still so the accent / destructive
+ * actions read as visually distinct from the digit/operator grid. */
+.keypad-grid > button {
+    border-radius: 15px;
+}
+
+.keypad-grid > button.suggested-action,
+.keypad-grid > button.clear-key {
+    border-radius: 25px;
+}
+
+/* Digit keys: a touch darker than the default keypad button so the
+ * digit pad reads as the primary input area. Uses Adwaita's
+ * @window_bg_color so light and dark themes both adapt. */
+button.numeric.title-2 {
+    background-color: shade(@window_bg_color, 0.80);
+}
+
+button.numeric.title-2:hover {
+    background-color: shade(@window_bg_color, 0.74);
+}
+
+/* Clear: same hue as the Enter (suggested-action) button — accent
+ * text on a lighter wash of the same accent. Tracks the user's
+ * chosen accent in both light and dark mode. */
+button.clear-key {
+    background-color: mix(@accent_bg_color, @window_bg_color, 0.8);
+    color: @window_fg_color;
+}
+
+button.clear-key:hover {
+    background-color: mix(@accent_bg_color, @window_bg_color, 0.7);
+}

@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/fr/benjaminbellamy/Inversee">
     <file preprocess="xml-stripblanks" compressed="true">shortcuts.ui</file>
+    <file compressed="true">style.css</file>
   </gresource>
 </gresources>

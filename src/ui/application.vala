@@ -39,6 +39,13 @@ namespace Inversee {
             if (display != null) {
                 var icon_theme = Gtk.IconTheme.get_for_display (display);
                 icon_theme.add_search_path (Config.SOURCE_ICONS_DIR);
+
+                var css_provider = new Gtk.CssProvider ();
+                css_provider.load_from_resource (
+                    "/fr/benjaminbellamy/Inversee/style.css");
+                Gtk.StyleContext.add_provider_for_display (
+                    display, css_provider,
+                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
         }
 
