@@ -33,14 +33,13 @@ curl -L -o /tmp/inversee.flatpak \
 - **Clipboard**: copy X, copy the whole stack, paste any whitespace-separated
   list of values.
 - **Translations**: English (source), French, German, Italian, Spanish,
-  Polish — switchable from the in-app menu.
+  Dutch, Polish, Portuguese — switchable from the in-app menu.
 - **Fully offline** — no network access, no telemetry.
 
 ## Status
 
-Pre-release. Core engine and UI work end-to-end; file-based session
-persistence (auto-save / auto-restore of stack and history on launch) is
-the remaining UI wiring.
+Released. Core engine and UI work end-to-end; the stack and undo
+history persist across launches.
 
 ## Keyboard shortcuts
 
@@ -57,6 +56,8 @@ the remaining UI wiring.
 | `Escape`           | Clear stack                             |
 | `Ctrl+Z`           | Undo                                    |
 | `Ctrl+C` / `Ctrl+V`| Copy X / paste                          |
+| `Ctrl+Shift+C`     | Copy entire stack                       |
+| `F10`              | Open the main menu                      |
 
 The same shortcuts are reachable from the on-screen keypad and the
 hamburger menu's **Keyboard Shortcuts** dialog.
@@ -85,7 +86,7 @@ The Flatpak manifest is the canonical build reference.
 
 ```sh
 flatpak-builder --user --install --force-clean \
-    build-flatpak build-aux/fr.benjaminbellamy.Inversee.yml
+    build-flatpak build-aux/fr.benjaminbellamy.Inversee.yaml
 flatpak run fr.benjaminbellamy.Inversee
 ```
 
