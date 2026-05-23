@@ -56,6 +56,8 @@ namespace Inversee {
             this.label.margin_top = 8;
             this.label.margin_bottom = 8;
             this.label.ellipsize = Pango.EllipsizeMode.START;
+            this.label.update_property (Gtk.AccessibleProperty.LABEL,
+                                        _("Current entry"), -1);
 
             this.append (this.label);
 
@@ -74,6 +76,12 @@ namespace Inversee {
             this.label.label = message;
             this.label.tooltip_text = message;
             this.label.add_css_class ("error");
+            this.label.update_property (Gtk.AccessibleProperty.DESCRIPTION,
+                                        message, -1);
+            // HIGH priority so assistive tech interrupts to read the
+            // error, regardless of where focus is.
+            this.label.announce (message,
+                                 Gtk.AccessibleAnnouncementPriority.HIGH);
 
             if (this.clear_timeout_id != 0) {
                 Source.remove (this.clear_timeout_id);
@@ -95,6 +103,8 @@ namespace Inversee {
             this.error_message = null;
             this.label.remove_css_class ("error");
             this.label.tooltip_text = null;
+            this.label.update_property (Gtk.AccessibleProperty.DESCRIPTION,
+                                        "", -1);
             this.refresh ();
         }
 
