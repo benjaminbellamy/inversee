@@ -8,7 +8,10 @@ built to look and feel like a native GNOME application.
 > **inversée** \\ɛ̃.vɛʁ.se\\  
 > French, past participle, feminine singular, of "inverser".
 
-![Screenshot of Inversée](data/screenshots/screenshot.png)
+<p align="center">
+  <img src="data/screenshots/screenshot-red-light.png" width="48%" alt="Inversée in light mode" />
+  <img src="data/screenshots/screenshot-red-dark.png" width="48%" alt="Inversée in dark mode" />
+</p>
 
 ## Install
 

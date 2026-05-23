@@ -73,11 +73,11 @@
 
   <screenshots>
     <screenshot type="default" environment="gnome">
-      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot-red-light.png</image>
       <caption>The main window in light mode.</caption>
     </screenshot>
     <screenshot environment="gnome:dark">
-      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot_dark.png</image>
+      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot-red-dark.png</image>
       <caption>The main window in dark mode.</caption>
     </screenshot>
   </screenshots>
