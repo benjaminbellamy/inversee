@@ -99,6 +99,16 @@
   </screenshots>
 
   <releases>
+    <release version="1.2.0" date="2026-05-23">
+      <description>
+        <p>Help rebinding the keyboard's Calculator key, plus screenshot polish.</p>
+        <ul>
+          <li>New hamburger-menu entry “Reassign calculator key…” walks the user through GNOME Settings → Keyboard so they can replace the default Launch Calculator shortcut with one that runs Inversée. Includes a one-click copy of the launch command and an Open Settings shortcut.</li>
+          <li>The AppStream screenshot carousel now showcases all three accent variants (red, blue, teal) in both light and dark mode, instead of only the red pair.</li>
+          <li>Translations updated across all eight locales.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.1.0" date="2026-05-23">
       <description>
         <p>Visual polish and a deeper accessibility pass.</p>
