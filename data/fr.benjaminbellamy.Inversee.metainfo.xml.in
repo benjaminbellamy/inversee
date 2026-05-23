@@ -83,6 +83,19 @@
   </screenshots>
 
   <releases>
+    <release version="1.1.0" date="2026-05-23">
+      <description>
+        <p>Visual polish and a deeper accessibility pass.</p>
+        <ul>
+          <li>Custom keypad styling: digit keys sit one shade darker than the window background, Clear uses a lightened wash of the accent, and every keypad button picks up a slightly rounder corner (Enter and Clear rounder still). All colours track the user's accent and the light/dark theme.</li>
+          <li>Stack rows are announced by register name to screen readers: "X register, …", "Y register, …", "Z register, …", then "Stack level N, …" beyond.</li>
+          <li>The entry/error area, the empty-stack placeholder transition, and the clipboard toasts all surface via AT-SPI announcements.</li>
+          <li><code>F10</code> opens the main menu from anywhere in the window.</li>
+          <li><code>Ctrl+Shift+C</code> copies the entire stack to the clipboard.</li>
+          <li>Build floor raised to GTK 4.14 for <code>gtk_accessible_announce()</code>.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.2" date="2026-05-13">
       <description>
         <p>Pre-Flathub polish round.</p>
