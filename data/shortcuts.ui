@@ -147,6 +147,12 @@
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
+                <property name="accelerator">&lt;Primary&gt;&lt;Shift&gt;c</property>
+                <property name="title" translatable="yes">Copy stack</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
                 <property name="accelerator">&lt;Primary&gt;v</property>
                 <property name="title" translatable="yes">Paste</property>
               </object>

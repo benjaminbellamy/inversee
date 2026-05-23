@@ -109,6 +109,9 @@ namespace Inversee {
             menu_button.icon_name = "open-menu-symbolic";
             describe (menu_button, _("Main Menu"));
             menu_button.menu_model = this.build_menu_model ();
+            // GNOME convention: F10 opens the primary menu from anywhere
+            // in the window.
+            menu_button.primary = true;
             header.pack_end (menu_button);
 
             return header;
@@ -333,7 +336,12 @@ namespace Inversee {
                 return true;
             }
             if (lkv == Gdk.Key.c && ctrl_held) {
-                this.on_copy_x ();
+                bool shift_held = (state & Gdk.ModifierType.SHIFT_MASK) != 0;
+                if (shift_held) {
+                    this.on_copy_stack ();
+                } else {
+                    this.on_copy_x ();
+                }
                 return true;
             }
             if (lkv == Gdk.Key.v && ctrl_held) {
@@ -440,18 +448,28 @@ namespace Inversee {
         }
 
         private void show_info (string message) {
+            this.present_toast (message, 2,
+                                Gtk.AccessibleAnnouncementPriority.MEDIUM);
+        }
+
+        // Surface a transient toast both visually (Adw.Toast) and to
+        // assistive tech (Gtk.Accessible.announce). Adw.Toast on its
+        // own does not consistently emit an AT-SPI announcement, so
+        // route every toast through here.
+        private void present_toast (string message, uint timeout,
+                                    Gtk.AccessibleAnnouncementPriority prio) {
             var toast = new Adw.Toast (message);
-            toast.timeout = 2;
+            toast.timeout = timeout;
             this.toast_overlay.add_toast (toast);
+            this.announce (message, prio);
         }
 
         private void on_copy_value (string display_value) {
             this.get_clipboard ().set_text (
                 Localize.format_number (display_value)
             );
-            var toast = new Adw.Toast (_("Copied"));
-            toast.timeout = 1;
-            this.toast_overlay.add_toast (toast);
+            this.present_toast (_("Copied"), 1,
+                                Gtk.AccessibleAnnouncementPriority.MEDIUM);
         }
 
         private void on_copy_x () {
@@ -488,9 +506,8 @@ namespace Inversee {
                 }
             }
             this.get_clipboard ().set_text (builder.str);
-            var toast = new Adw.Toast (_("Stack copied"));
-            toast.timeout = 1;
-            this.toast_overlay.add_toast (toast);
+            this.present_toast (_("Stack copied"), 1,
+                                Gtk.AccessibleAnnouncementPriority.MEDIUM);
         }
 
         private async void paste_from_clipboard () {
