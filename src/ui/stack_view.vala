@@ -66,6 +66,10 @@ namespace Inversee {
             this.inner_stack.vexpand = true;
             this.inner_stack.add_named (empty_label, "empty");
             this.inner_stack.add_named (this.scrolled, "populated");
+            // STATUS role turns the visible-child swap into an AT-SPI
+            // live-region update so screen readers announce the
+            // transition between "Stack empty" and a populated stack.
+            this.inner_stack.accessible_role = Gtk.AccessibleRole.STATUS;
 
             this.append (this.inner_stack);
 
@@ -138,6 +142,29 @@ namespace Inversee {
             hbox.append (idx);
             hbox.append (val);
             row.set_child (hbox);
+
+            string localized = Localize.format_number (display);
+            string accessible_label;
+            switch (index_from_top) {
+                case 1:
+                    accessible_label = _("X register, %s").printf (localized);
+                    break;
+                case 2:
+                    accessible_label = _("Y register, %s").printf (localized);
+                    break;
+                case 3:
+                    accessible_label = _("Z register, %s").printf (localized);
+                    break;
+                default:
+                    /* Translators: %d is the 1-based level from the top of
+                     * the stack (4 or more); %s is the formatted value. */
+                    accessible_label = _("Stack level %d, %s").printf (
+                        index_from_top, localized);
+                    break;
+            }
+            row.update_property (Gtk.AccessibleProperty.LABEL,
+                                 accessible_label, -1);
+
             return row;
         }
 
