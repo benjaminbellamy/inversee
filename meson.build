@@ -39,7 +39,7 @@ add_project_arguments(
 glib_dep = dependency('glib-2.0', version: '>= 2.74')
 gio_dep = dependency('gio-2.0', version: '>= 2.74')
 gobject_dep = dependency('gobject-2.0', version: '>= 2.74')
-gtk_dep = dependency('gtk4', version: '>= 4.10')
+gtk_dep = dependency('gtk4', version: '>= 4.14')
 adw_dep = dependency('libadwaita-1', version: '>= 1.4')
 gmp_dep = dependency('gmp')
 mpfr_dep = dependency('mpfr')
