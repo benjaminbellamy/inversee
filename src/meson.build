@@ -9,6 +9,7 @@ inversee_sources = files(
     'ui/keypad.vala',
     'ui/formatting.vala',
     'ui/session_store.vala',
+    'ui/a11y.vala',
 )
 
 inversee_deps = [

@@ -195,13 +195,5 @@ namespace Inversee {
             return b;
         }
 
-        // Sets BOTH the hover tooltip and the AT-SPI accessible name on a
-        // glyph-only button. tooltip_text alone reaches sighted users only;
-        // the accessible-LABEL property is what screen readers announce.
-        private static void describe (Gtk.Widget w, string description) {
-            w.tooltip_text = description;
-            w.update_property (Gtk.AccessibleProperty.LABEL,
-                               description, -1);
-        }
     }
 }

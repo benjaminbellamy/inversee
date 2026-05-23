@@ -117,14 +117,6 @@ namespace Inversee {
             return header;
         }
 
-        // Mirrors Keypad.describe: tooltip for sighted users plus the
-        // AT-SPI accessible label for screen readers.
-        private static void describe (Gtk.Widget w, string description) {
-            w.tooltip_text = description;
-            w.update_property (Gtk.AccessibleProperty.LABEL,
-                               description, -1);
-        }
-
         private GLib.MenuModel build_clipboard_menu () {
             var menu = new GLib.Menu ();
             menu.append (_("Paste"),      "win.paste");
@@ -452,10 +444,8 @@ namespace Inversee {
                                 Gtk.AccessibleAnnouncementPriority.MEDIUM);
         }
 
-        // Surface a transient toast both visually (Adw.Toast) and to
-        // assistive tech (Gtk.Accessible.announce). Adw.Toast on its
-        // own does not consistently emit an AT-SPI announcement, so
-        // route every toast through here.
+        // Adw.Toast does not consistently emit an AT-SPI announcement
+        // on its own, so route every toast through here.
         private void present_toast (string message, uint timeout,
                                     Gtk.AccessibleAnnouncementPriority prio) {
             var toast = new Adw.Toast (message);
