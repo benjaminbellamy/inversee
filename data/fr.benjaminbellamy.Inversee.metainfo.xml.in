@@ -74,11 +74,27 @@
   <screenshots>
     <screenshot type="default" environment="gnome">
       <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot-red-light.png</image>
-      <caption>The main window in light mode.</caption>
+      <caption>Light mode with the red accent.</caption>
     </screenshot>
     <screenshot environment="gnome:dark">
       <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot-red-dark.png</image>
-      <caption>The main window in dark mode.</caption>
+      <caption>Dark mode with the red accent.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot-blue-light.png</image>
+      <caption>Light mode with the blue accent.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot-blue-dark.png</image>
+      <caption>Dark mode with the blue accent.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot-teal-light.png</image>
+      <caption>Light mode with the teal accent.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/benjaminbellamy/inversee/main/data/screenshots/screenshot-teal-dark.png</image>
+      <caption>Dark mode with the teal accent.</caption>
     </screenshot>
   </screenshots>
 
