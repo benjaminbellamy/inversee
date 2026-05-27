@@ -3,6 +3,7 @@
 
 inversee_core_vala_sources = files(
     'number.vala',
+    'number_format.vala',
     'stack.vala',
     'parser.vala',
     'history.vala',

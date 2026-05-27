@@ -77,7 +77,12 @@ namespace Inversee {
             this.refresh ();
         }
 
-        private void refresh () {
+        /**
+         * Rebuild every row from the current stack. Connected to {@link
+         * Calculator.changed}; also called by the window when the number
+         * format changes so values re-render in the new convention.
+         */
+        public void refresh () {
             Gtk.Widget? child = this.list_box.get_first_child ();
             while (child != null) {
                 Gtk.Widget? next = child.get_next_sibling ();

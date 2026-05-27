@@ -18,9 +18,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/* uselocale(), newlocale() are POSIX.1-2008; ask for the GNU feature set. */
+#define _GNU_SOURCE
+
 #include "inversee_mpfr_helpers.h"
 
 #include <glib.h>
+#include <locale.h>
 #include <mpfr.h>
 
 __mpfr_struct *
@@ -40,11 +44,39 @@ inversee_mpfr_free (__mpfr_struct *p)
     }
 }
 
+/*
+ * A cached C locale used to keep numeric formatting locale-independent.
+ * mpfr_snprintf() honours LC_NUMERIC, so without this it would emit the
+ * locale's decimal separator (e.g. a comma under fr_FR). The engine's
+ * canonical form must always use an ASCII period; locale-aware display
+ * is the UI's job (Inversee.Localize).
+ */
+static locale_t
+inversee_c_numeric_locale (void)
+{
+    static locale_t loc = (locale_t) 0;
+    if (loc == (locale_t) 0) {
+        loc = newlocale (LC_NUMERIC_MASK, "C", (locale_t) 0);
+    }
+    return loc;
+}
+
 int
 inversee_mpfr_format (const __mpfr_struct *op,
                       int digits,
                       char *buf,
                       size_t buflen)
 {
-    return mpfr_snprintf (buf, buflen, "%.*Rg", digits, op);
+    locale_t c_loc = inversee_c_numeric_locale ();
+    locale_t saved = (locale_t) 0;
+    int r;
+
+    if (c_loc != (locale_t) 0) {
+        saved = uselocale (c_loc);
+    }
+    r = mpfr_snprintf (buf, buflen, "%.*Rg", digits, op);
+    if (saved != (locale_t) 0) {
+        uselocale (saved);
+    }
+    return r;
 }

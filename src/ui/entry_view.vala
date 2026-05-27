@@ -120,6 +120,17 @@ namespace Inversee {
             this.refresh ();
         }
 
+        /**
+         * Re-render the in-progress entry in the current number format.
+         * Called by the window on a format change; skipped while an error
+         * is showing so the message is not clobbered.
+         */
+        public void refresh_format () {
+            if (this.error_message == null) {
+                this.refresh ();
+            }
+        }
+
         private void refresh () {
             if (this.calc.entry.length == 0) {
                 this.label.label = "";

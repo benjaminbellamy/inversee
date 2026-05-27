@@ -35,5 +35,22 @@
         value forces that language at startup by setting LANGUAGE.
       </description>
     </key>
+    <key name="number-format" type="s">
+      <choices>
+        <choice value="auto"/>
+        <choice value="os"/>
+        <choice value="us"/>
+        <choice value="fr"/>
+        <choice value="eu"/>
+      </choices>
+      <default>'auto'</default>
+      <summary>Number format</summary>
+      <description>
+        Decimal separator, thousands separator, and clipboard handling
+        for display, copy, and paste. "auto" follows the system locale and
+        parses pasted values tolerantly; "os" follows the system locale
+        strictly; "us" is 1,234.56; "fr" is 1 234,56; "eu" is 1.234,56.
+      </description>
+    </key>
   </schema>
 </schemalist>

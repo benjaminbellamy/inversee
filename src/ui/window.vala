@@ -37,6 +37,11 @@ namespace Inversee {
             this.calc = new Calculator ();
             this.settings = new Settings (Config.APP_ID);
 
+            // Apply the saved number format before any view renders, so
+            // the first paint and the keypad decimal key use it.
+            Localize.apply_format_code (
+                this.settings.get_string ("number-format"));
+
             // Two-way bind the window geometry to GSettings — initial
             // values are pulled from the schema, and any resize /
             // maximize change is written back automatically.
@@ -137,8 +142,27 @@ namespace Inversee {
             lang_menu.append ("Polski",           "win.language::pl");
             lang_menu.append ("Português",        "win.language::pt");
 
+            var format_menu = new GLib.Menu ();
+            format_menu.append (_("Automatic"), "win.number-format::auto");
+            // Show the active OS convention so "System" is self-explanatory.
+            format_menu.append (
+                _("System") + " (" + this.os_format_sample () + ")",
+                "win.number-format::os");
+            format_menu.append (
+                "1,234.56  " + flag ("US") + flag ("GB"),
+                "win.number-format::us");
+            format_menu.append (
+                "1 234,56  " + flag ("FR"),
+                "win.number-format::fr");
+            format_menu.append (
+                "1.234,56  " + flag ("DE") + flag ("ES") + flag ("IT")
+                + flag ("NL") + flag ("PL") + flag ("PT"),
+                "win.number-format::eu");
+
             var section_top = new GLib.Menu ();
             section_top.append_submenu ("🌐  " + _("Language"), lang_menu);
+            section_top.append_submenu ("🔢  " + _("Number format"),
+                                        format_menu);
 
             var section_bottom = new GLib.Menu ();
             section_bottom.append ("⌨  " + _("Keyboard Shortcuts"),
@@ -208,6 +232,48 @@ namespace Inversee {
                 );
             });
             this.add_action (language_action);
+
+            string current_format = this.settings.get_string ("number-format");
+            var format_action = new SimpleAction.stateful (
+                "number-format",
+                GLib.VariantType.STRING,
+                new Variant.string (current_format)
+            );
+            format_action.activate.connect ((param) => {
+                if (param == null) return;
+                string code = param.get_string ();
+                format_action.set_state (param);
+                this.settings.set_string ("number-format", code);
+                // Number format applies live — no restart. Rebuild the
+                // active format and re-render everything that shows or
+                // accepts numbers.
+                Localize.apply_format_code (code);
+                this.stack_view.refresh ();
+                this.entry_view.refresh_format ();
+                this.keypad.refresh_decimal_key ();
+            });
+            this.add_action (format_action);
+        }
+
+        /** A sample number rendered in the running OS convention. */
+        private string os_format_sample () {
+            string dec = Localize.decimal_separator ();
+            string grp = Localize.thousands_separator ();
+            return "1" + grp + "234" + dec + "56";
+        }
+
+        /**
+         * The flag emoji for an ISO 3166-1 alpha-2 country code, built
+         * from a pair of Unicode regional-indicator symbols (e.g. "FR" →
+         * 🇫🇷). Avoids embedding raw emoji bytes in the source.
+         */
+        private static string flag (string country_code) {
+            var sb = new StringBuilder ();
+            for (int i = 0; i < country_code.length; i++) {
+                sb.append_unichar (
+                    (unichar) (0x1F1E6 + (country_code[i] - 'A')));
+            }
+            return sb.str;
         }
 
         private void show_reassign_calc_key () {
@@ -315,7 +381,8 @@ namespace Inversee {
                 this,
                 _("Quit and reset?"),
                 _("Inversée will quit. The stack, undo history, saved"
-                  + " language, and window size will all be cleared.")
+                  + " language, number format, and window size will all"
+                  + " be cleared.")
             );
             dialog.add_response ("cancel", _("Cancel"));
             dialog.add_response ("reset",  _("Quit and reset"));
@@ -347,6 +414,7 @@ namespace Inversee {
 
             // Reset GSettings keys to their schema defaults.
             this.settings.reset ("language");
+            this.settings.reset ("number-format");
             this.settings.reset ("window-width");
             this.settings.reset ("window-height");
             this.settings.reset ("window-maximized");
@@ -617,7 +685,8 @@ namespace Inversee {
                 if (text == null || text.length == 0) {
                     return;
                 }
-                var values = Parser.parse_multiple (text);
+                var values = Parser.parse_multiple (
+                    text, Localize.active_format ());
                 this.calc.push_values (values);
             } catch (Error e) {
                 this.show_error (e.message);

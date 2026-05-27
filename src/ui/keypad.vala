@@ -33,6 +33,7 @@ namespace Inversee {
         public delegate void KeypadAction () throws Error;
 
         private Calculator calc;
+        private Gtk.Button decimal_button;
 
         public signal void error_occurred (string message);
 
@@ -109,11 +110,12 @@ namespace Inversee {
                 _("Subtract"));
 
             this.add_digit_button (0, 0, 5);
-            var decimal_b = this.make_button (Localize.decimal_separator (),
-                                              { "numeric" });
-            describe (decimal_b, _("Decimal separator"));
-            decimal_b.clicked.connect (() => this.calc.append_decimal ());
-            this.attach (decimal_b, 1, 5, 1, 1);
+            this.decimal_button = this.make_button (
+                Localize.active_format ().decimal_sep, { "numeric" });
+            describe (this.decimal_button, _("Decimal separator"));
+            this.decimal_button.clicked.connect (
+                () => this.calc.append_decimal ());
+            this.attach (this.decimal_button, 1, 5, 1, 1);
             this.add_action_button ("+/−", 2, 5, 1, 1, {},
                 () => this.calc.toggle_sign (),
                 _("Toggle sign"));
@@ -136,6 +138,11 @@ namespace Inversee {
                 }
             });
             this.attach (enter_b, 4, 3, 1, 3);
+        }
+
+        /** Update the decimal key's glyph after a number-format change. */
+        public void refresh_decimal_key () {
+            this.decimal_button.label = Localize.active_format ().decimal_sep;
         }
 
         private void add_digit_button (int digit, int col, int row) {
