@@ -3,5 +3,8 @@
   <gresource prefix="/fr/benjaminbellamy/Inversee">
     <file preprocess="xml-stripblanks" compressed="true">shortcuts.ui</file>
     <file compressed="true">style.css</file>
+    <file preprocess="xml-stripblanks" compressed="true">icons/scalable/actions/fr.benjaminbellamy.Inversee-enter-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" compressed="true">icons/scalable/actions/fr.benjaminbellamy.Inversee-clear-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" compressed="true">icons/scalable/actions/fr.benjaminbellamy.Inversee-backspace-symbolic.svg</file>
   </gresource>
 </gresources>

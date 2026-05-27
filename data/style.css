@@ -13,7 +13,8 @@
 }
 
 .keypad-grid > button.suggested-action,
-.keypad-grid > button.clear-key {
+.keypad-grid > button.clear-key,
+.keypad-grid > button.back-key {
     border-radius: 25px;
 }
 
@@ -28,14 +29,17 @@ button.numeric.title-2:hover {
     background-color: shade(@window_bg_color, 0.74);
 }
 
-/* Clear: same hue as the Enter (suggested-action) button — accent
- * text on a lighter wash of the same accent. Tracks the user's
- * chosen accent in both light and dark mode. */
-button.clear-key {
-    background-color: mix(@accent_bg_color, @window_bg_color, 0.8);
-    color: @window_fg_color;
+/* Clear and Backspace: the same accent hue as the Enter
+ * (suggested-action) button, just a touch lighter, with the accent's
+ * own foreground colour so their white icons stay legible like Enter's.
+ * Tracks the user's chosen accent in both light and dark mode. */
+button.clear-key,
+button.back-key {
+    background-color: mix(@accent_bg_color, @window_bg_color, 0.45);
+    color: @accent_fg_color;
 }
 
-button.clear-key:hover {
-    background-color: mix(@accent_bg_color, @window_bg_color, 0.7);
+button.clear-key:hover,
+button.back-key:hover {
+    background-color: mix(@accent_bg_color, @window_bg_color, 0.35);
 }

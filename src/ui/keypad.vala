@@ -83,9 +83,10 @@ namespace Inversee {
             this.add_action_button (_("mod"), 3, 1, 1, 1, {},
                 () => this.calc.apply_binary (BinaryOp.MOD),
                 _("Modulo"));
-            this.add_action_button ("⌫", 4, 1, 1, 1, {},
+            this.add_action_button ("", 4, 1, 1, 1, { "back-key" },
                 () => this.calc.backspace (),
-                _("Backspace"));
+                _("Backspace"),
+                Config.APP_ID + "-backspace-symbolic");
 
             // Rows 2-5 cols 0-3: digit pad + ÷ × − +.
             this.add_digit_button (7, 0, 2);
@@ -124,12 +125,15 @@ namespace Inversee {
                 _("Add"));
 
             // Col 4: Clear (row 2), Enter (rows 3-5, tall accent).
-            this.add_action_button (_("Clear"), 4, 2, 1, 1,
-                                    { "clear-key" },
-                () => this.calc.clear_stack ());
+            this.add_action_button ("", 4, 2, 1, 1, { "clear-key" },
+                () => this.calc.clear_stack (),
+                _("Clear"),
+                Config.APP_ID + "-clear-symbolic");
 
-            var enter_b = this.make_button (_("Enter"),
-                                            { "suggested-action" });
+            var enter_b = this.make_icon_button (
+                Config.APP_ID + "-enter-symbolic",
+                { "suggested-action" }, 56);
+            describe (enter_b, _("Enter"));
             enter_b.clicked.connect (() => {
                 try {
                     this.calc.enter ();
@@ -177,8 +181,11 @@ namespace Inversee {
                                         int height,
                                         string[] css_classes,
                                         owned KeypadAction action,
-                                        string? description = null) {
-            var b = this.make_button (label, css_classes);
+                                        string? description = null,
+                                        string? icon_name = null) {
+            var b = icon_name != null
+                ? this.make_icon_button (icon_name, css_classes, 24)
+                : this.make_button (label, css_classes);
             if (description != null) {
                 describe (b, description);
             }
@@ -194,6 +201,27 @@ namespace Inversee {
 
         private Gtk.Button make_button (string label, string[] css_classes) {
             var b = new Gtk.Button.with_label (label);
+            b.hexpand = true;
+            b.vexpand = true;
+            foreach (unowned string c in css_classes) {
+                b.add_css_class (c);
+            }
+            return b;
+        }
+
+        /**
+         * A button whose face is the symbolic icon {@code icon_name}
+         * (embedded in the app resources), sized to {@code pixel_size}.
+         * Symbolic icons recolour to the button's text colour, so they
+         * follow the accent and light/dark theme like the text buttons do.
+         */
+        private Gtk.Button make_icon_button (string icon_name,
+                                             string[] css_classes,
+                                             int pixel_size) {
+            var image = new Gtk.Image.from_icon_name (icon_name);
+            image.pixel_size = pixel_size;
+            var b = new Gtk.Button ();
+            b.child = image;
             b.hexpand = true;
             b.vexpand = true;
             foreach (unowned string c in css_classes) {

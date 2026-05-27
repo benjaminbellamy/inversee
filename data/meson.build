@@ -59,7 +59,13 @@ inversee_gresource = gnome.compile_resources(
     'inversee-resources',
     'inversee.gresource.xml',
     source_dir: meson.current_source_dir(),
-    dependencies: files('shortcuts.ui', 'style.css'),
+    dependencies: files(
+        'shortcuts.ui',
+        'style.css',
+        'icons' / 'scalable' / 'actions' / '@0@-enter-symbolic.svg'.format(app_id),
+        'icons' / 'scalable' / 'actions' / '@0@-clear-symbolic.svg'.format(app_id),
+        'icons' / 'scalable' / 'actions' / '@0@-backspace-symbolic.svg'.format(app_id),
+    ),
 )
 
 install_data(
