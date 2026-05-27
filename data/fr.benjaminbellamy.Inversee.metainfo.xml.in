@@ -99,6 +99,18 @@
   </screenshots>
 
   <releases>
+    <release version="1.3.0" date="2026-05-27">
+      <description>
+        <p>A configurable number format and refreshed keypad keys.</p>
+        <ul>
+          <li>New “Number format” menu sets the decimal separator, the thousands separator, and the clipboard behaviour together — Automatic (the default), System, or a fixed convention (1,234.56, 1 234,56, 1.234,56) — applied live with no restart.</li>
+          <li>Clipboard paste is more forgiving: it ignores currency symbols, units, and labels around a number, handles smart digit grouping, and reads both decimal conventions; values can be separated by “;”, newlines, or tabs.</li>
+          <li>The Enter, Clear, and Backspace keys now use custom icons that follow the accent colour and the light/dark theme.</li>
+          <li>The About dialog shows a short Reverse Polish Notation quick-start.</li>
+          <li>Translations updated across all eight locales.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.2.0" date="2026-05-23">
       <description>
         <p>Help rebinding the keyboard's Calculator key, plus screenshot polish.</p>
