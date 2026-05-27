@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: inversee 0.1.0\n"
-"Report-Msgid-Bugs-To: benjamin@castopod.org\n"
-"POT-Creation-Date: 2026-05-23 14:32+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-27 20:21+0200\n"
 "PO-Revision-Date: 2026-05-12 00:00+0000\n"
 "Last-Translator: Benjamin Bellamy <benjamin@castopod.org>\n"
 "Language-Team: Italian\n"
@@ -107,10 +107,32 @@ msgid "Dark mode with the teal accent."
 msgstr ""
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:104
-msgid "Visual polish and a deeper accessibility pass."
+msgid "Help rebinding the keyboard's Calculator key, plus screenshot polish."
 msgstr ""
 
 #: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:106
+msgid ""
+"New hamburger-menu entry “Reassign calculator key…” walks the user through "
+"GNOME Settings → Keyboard so they can replace the default Launch Calculator "
+"shortcut with one that runs Inversée. Includes a one-click copy of the "
+"launch command and an Open Settings shortcut."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:107
+msgid ""
+"The AppStream screenshot carousel now showcases all three accent variants "
+"(red, blue, teal) in both light and dark mode, instead of only the red pair."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:108
+msgid "Translations updated across all eight locales."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:114
+msgid "Visual polish and a deeper accessibility pass."
+msgstr ""
+
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:116
 msgid ""
 "Custom keypad styling: digit keys sit one shade darker than the window "
 "background, Clear uses a lightened wash of the accent, and every keypad "
@@ -118,71 +140,71 @@ msgid ""
 "All colours track the user's accent and the light/dark theme."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:107
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:117
 msgid ""
 "Stack rows are announced by register name to screen readers: \"X register, …"
 "\", \"Y register, …\", \"Z register, …\", then \"Stack level N, …\" beyond."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:108
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:118
 msgid ""
 "The entry/error area, the empty-stack placeholder transition, and the "
 "clipboard toasts all surface via AT-SPI announcements."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:109
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:119
 msgid "<code>F10</code> opens the main menu from anywhere in the window."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:110
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:120
 msgid "<code>Ctrl+Shift+C</code> copies the entire stack to the clipboard."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:111
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:121
 msgid ""
 "Build floor raised to GTK 4.14 for <code>gtk_accessible_announce()</code>."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:117
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:127
 msgid "Pre-Flathub polish round."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:119
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:129
 msgid ""
 "Accessibility: glyph-only keypad and header-bar buttons now expose AT-SPI "
 "accessible names for screen readers."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:120
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:130
 msgid ""
 "The keyboard-shortcuts dialog is now a native <code>GtkShortcutsWindow</"
 "code> with grouped, searchable entries."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:121
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:131
 msgid ""
 "AppStream metainfo declares minimum display length and recommended input "
 "controls (keyboard, pointing, touch)."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:122
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:132
 msgid "Translation catalogues filled in for all eight locales."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:123
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:133
 msgid ""
 "The LICENSE file is installed inside the Flatpak at <code>/app/share/"
 "licenses/</code> as Flathub requires."
 msgstr ""
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:129
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:139
 msgid ""
 "Maintenance release. Build-pipeline updates only — no user-facing changes."
 msgstr ""
 "Versione di manutenzione. Solo aggiornamenti del pipeline di compilazione — "
 "nessuna modifica visibile all'utente."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:131
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:141
 msgid ""
 "GMP and MPFR build with <code>-std=gnu17</code> so they configure cleanly "
 "under freedesktop SDK 25.08 (GCC 15)."
@@ -190,11 +212,11 @@ msgstr ""
 "GMP e MPFR compilano con <code>-std=gnu17</code> per configurarsi "
 "correttamente sotto freedesktop SDK 25.08 (GCC 15)."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:132
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:142
 msgid "Runtime moved from end-of-life GNOME 48 to supported GNOME 49."
 msgstr "Runtime spostato da GNOME 48 (a fine vita) a GNOME 49 supportata."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:133
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:143
 msgid ""
 "AppStream metainfo: categories, keywords, update contact, and a second "
 "screenshot for dark mode."
@@ -202,7 +224,7 @@ msgstr ""
 "Metainfo AppStream: categorie, parole chiave, contatto per gli aggiornamenti "
 "e una seconda schermata per la modalità scura."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:134
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:144
 msgid ""
 "CI: tagged pushes now auto-upload the Flatpak bundle to the matching GitHub "
 "Release."
@@ -210,47 +232,47 @@ msgstr ""
 "CI: i push di tag ora caricano automaticamente il bundle Flatpak nella "
 "release GitHub corrispondente."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:140
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:150
 msgid "First public release."
 msgstr "Prima versione pubblica."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:142
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:152
 msgid "Unbounded RPN stack with swap, drop, rot, dup, dup2 and clear."
 msgstr "Pila RPN illimitata con swap, drop, rot, dup, dup2 e clear."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:143
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:153
 msgid "Arbitrary-precision arithmetic via MPFR (128-bit internal)."
 msgstr ""
 "Aritmetica a precisione arbitraria tramite MPFR (128 bit internamente)."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:144
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:154
 msgid "Full operation set: + − × ÷ mod %, x^y, √, 1/x, +/−."
 msgstr "Set completo di operazioni: + − × ÷ mod %, x^y, √, 1/x, +/−."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:145
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:155
 msgid "Unbounded undo, capped at 1000 entries per session."
 msgstr "Annullamento illimitato, limitato a 1000 voci per sessione."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:146
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:156
 msgid "Locale-aware display, locale-tolerant clipboard paste."
 msgstr ""
 "Visualizzazione localizzata, incolla dagli appunti tollerante alle locali."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:147
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:157
 msgid "Clipboard menu: paste, copy X, copy whole stack."
 msgstr "Menu appunti: incolla, copia X, copia tutta la pila."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:148
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:158
 msgid "Session persistence to $XDG_DATA_HOME/inversee/state.json."
 msgstr "Persistenza sessione in $XDG_DATA_HOME/inversee/state.json."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:149
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:159
 msgid "Window geometry and chosen UI language persisted via GSettings."
 msgstr ""
 "Geometria della finestra e lingua dell'interfaccia scelta vengono mantenute "
 "tramite GSettings."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:150
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:160
 msgid ""
 "Translations: English, French, German, Italian, Spanish, Dutch, Polish, "
 "Portuguese."
@@ -258,7 +280,7 @@ msgstr ""
 "Traduzioni: inglese, francese, tedesco, italiano, spagnolo, olandese, "
 "polacco, portoghese."
 
-#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:156
+#: data/fr.benjaminbellamy.Inversee.metainfo.xml.in:166
 msgid "Initial scaffold."
 msgstr "Impalcatura iniziale."
 
@@ -266,7 +288,7 @@ msgstr "Impalcatura iniziale."
 msgid "Entry"
 msgstr "Inserimento"
 
-#: data/shortcuts.ui:17 src/ui/keypad.vala:114
+#: data/shortcuts.ui:17 src/ui/keypad.vala:115
 msgid "Decimal separator"
 msgstr "Separatore decimale"
 
@@ -282,19 +304,19 @@ msgstr "Cancella ultimo carattere / scarta X"
 msgid "Arithmetic"
 msgstr "Aritmetica"
 
-#: data/shortcuts.ui:40 src/ui/keypad.vala:122
+#: data/shortcuts.ui:40 src/ui/keypad.vala:124
 msgid "Add"
 msgstr "Addizione"
 
-#: data/shortcuts.ui:46 src/ui/keypad.vala:109
+#: data/shortcuts.ui:46 src/ui/keypad.vala:110
 msgid "Subtract"
 msgstr "Sottrazione"
 
-#: data/shortcuts.ui:52 src/ui/keypad.vala:102
+#: data/shortcuts.ui:52 src/ui/keypad.vala:103
 msgid "Multiply"
 msgstr "Moltiplicazione"
 
-#: data/shortcuts.ui:58 src/ui/keypad.vala:95
+#: data/shortcuts.ui:58 src/ui/keypad.vala:96
 msgid "Divide"
 msgstr "Divisione"
 
@@ -310,7 +332,7 @@ msgstr "Potenza (x^y)"
 msgid "Functions"
 msgstr "Funzioni"
 
-#: data/shortcuts.ui:81 src/ui/keypad.vala:75
+#: data/shortcuts.ui:81 src/ui/keypad.vala:76
 msgid "Square root"
 msgstr "Radice quadrata"
 
@@ -322,7 +344,7 @@ msgstr "Inverso (1/x)"
 msgid "Negate (+/-)"
 msgstr "Cambia segno (+/−)"
 
-#: data/shortcuts.ui:99 src/ui/keypad.vala:84
+#: data/shortcuts.ui:99 src/ui/keypad.vala:85
 msgid "Modulo"
 msgstr "Modulo"
 
@@ -358,11 +380,11 @@ msgstr "Annulla"
 msgid "Copy X"
 msgstr "Copia X"
 
-#: data/shortcuts.ui:151 src/ui/window.vala:124
+#: data/shortcuts.ui:151 src/ui/window.vala:129
 msgid "Copy stack"
 msgstr "Copia pila"
 
-#: data/shortcuts.ui:157 src/ui/window.vala:122
+#: data/shortcuts.ui:157 src/ui/window.vala:127
 msgid "Paste"
 msgstr "Incolla"
 
@@ -383,7 +405,7 @@ msgstr "Voce non valida: %s"
 msgid "nothing to undo"
 msgstr "niente da annullare"
 
-#: src/core/parser.vala:74
+#: src/core/parser.vala:99
 #, fuzzy, c-format
 msgid "Invalid number: %s"
 msgstr "Numero non valido: %s"
@@ -461,51 +483,54 @@ msgstr "rot: servono 3 operandi"
 msgid "Current entry"
 msgstr "Voce corrente"
 
-#: src/ui/keypad.vala:60
+#. Row 0: stack ops, uppercase, flat (no chrome) for a
+#. lighter visual weight than the chunky digit/math buttons.
+#: src/ui/keypad.vala:61
 msgid "SWAP"
 msgstr ""
 
-#: src/ui/keypad.vala:62
+#: src/ui/keypad.vala:63
 msgid "ROT"
 msgstr ""
 
-#: src/ui/keypad.vala:64
+#: src/ui/keypad.vala:65
 msgid "DUP"
 msgstr ""
 
-#: src/ui/keypad.vala:66
+#: src/ui/keypad.vala:67
 msgid "DUP2"
 msgstr ""
 
-#: src/ui/keypad.vala:68
+#: src/ui/keypad.vala:69
 msgid "DROP"
 msgstr ""
 
-#: src/ui/keypad.vala:78
+#: src/ui/keypad.vala:79
 msgid "Inverse"
 msgstr "Inverso (1/x)"
 
-#: src/ui/keypad.vala:81
+#: src/ui/keypad.vala:82
 msgid "Power"
 msgstr "Potenza (x^y)"
 
-#: src/ui/keypad.vala:82
+#: src/ui/keypad.vala:83
 msgid "mod"
 msgstr ""
 
-#: src/ui/keypad.vala:87
+#: src/ui/keypad.vala:88
 msgid "Backspace"
 msgstr "Backspace"
 
-#: src/ui/keypad.vala:119
+#: src/ui/keypad.vala:121
 msgid "Toggle sign"
 msgstr "Cambia segno"
 
-#: src/ui/keypad.vala:125
+#. Col 4: Clear (row 2), Enter (rows 3-5, tall accent).
+#: src/ui/keypad.vala:127
 msgid "Clear"
 msgstr ""
 
-#: src/ui/keypad.vala:129
+#: src/ui/keypad.vala:131
 msgid "Enter"
 msgstr ""
 
@@ -513,77 +538,90 @@ msgstr ""
 msgid "Stack empty"
 msgstr "Pila vuota"
 
-#: src/ui/stack_view.vala:151
+#: src/ui/stack_view.vala:156
 #, c-format
 msgid "X register, %s"
 msgstr "Registro X, %s"
 
-#: src/ui/stack_view.vala:154
+#: src/ui/stack_view.vala:159
 #, c-format
 msgid "Y register, %s"
 msgstr "Registro Y, %s"
 
-#: src/ui/stack_view.vala:157
+#: src/ui/stack_view.vala:162
 #, c-format
 msgid "Z register, %s"
 msgstr "Registro Z, %s"
 
 #. Translators: %d is the 1-based level from the top of
 #. * the stack (4 or more); %s is the formatted value.
-#: src/ui/stack_view.vala:162
+#: src/ui/stack_view.vala:167
 #, c-format
 msgid "Stack level %d, %s"
 msgstr "Livello pila %d, %s"
 
-#: src/ui/window.vala:96
+#: src/ui/window.vala:101
 msgid "Undo (Ctrl+Z)"
 msgstr "Annulla (Ctrl+Z)"
 
-#: src/ui/window.vala:104
+#: src/ui/window.vala:109
 msgid "Clipboard"
 msgstr "Appunti"
 
-#: src/ui/window.vala:110
+#: src/ui/window.vala:115
 msgid "Main Menu"
 msgstr "Menu principale"
 
-#: src/ui/window.vala:123
+#: src/ui/window.vala:128
 msgid "Copy"
 msgstr "Copia"
 
-#: src/ui/window.vala:130
+#: src/ui/window.vala:135
 msgid "Auto (system)"
 msgstr "Auto (sistema)"
 
-#: src/ui/window.vala:141
+#: src/ui/window.vala:146
+msgid "Automatic"
+msgstr "Automatico"
+
+#. Show the active OS convention so "System" is self-explanatory.
+#: src/ui/window.vala:149
+msgid "System"
+msgstr "Sistema"
+
+#: src/ui/window.vala:163
 msgid "Language"
 msgstr "Lingua"
 
-#: src/ui/window.vala:144
+#: src/ui/window.vala:164
+msgid "Number format"
+msgstr "Formato numerico"
+
+#: src/ui/window.vala:168
 msgid "Keyboard Shortcuts"
 msgstr "Scorciatoie da tastiera"
 
-#: src/ui/window.vala:146
+#: src/ui/window.vala:170
 msgid "Reassign calculator key…"
 msgstr "Riassegna il tasto calcolatrice…"
 
-#: src/ui/window.vala:148
+#: src/ui/window.vala:172
 msgid "About Inversée"
 msgstr "Informazioni su Inversée"
 
-#: src/ui/window.vala:152 src/ui/window.vala:290
+#: src/ui/window.vala:176 src/ui/window.vala:388
 msgid "Quit and reset"
 msgstr "Esci e reimposta"
 
-#: src/ui/window.vala:207
+#: src/ui/window.vala:231
 msgid "Restart Inversée to apply the language change."
 msgstr "Riavviare Inversée per applicare il cambio di lingua."
 
-#: src/ui/window.vala:216
+#: src/ui/window.vala:290
 msgid "Use your keyboard's Calculator key for Inversée"
 msgstr "Usa il tasto Calcolatrice della tastiera per Inversée"
 
-#: src/ui/window.vala:217
+#: src/ui/window.vala:295
 msgid ""
 "GNOME launches the default calculator when you press your keyboard's "
 "Calculator key. To use Inversée instead:\n"
@@ -593,52 +631,83 @@ msgid ""
 "\n"
 "2. Under Custom Shortcuts, add a new shortcut that runs the command below, "
 "and when prompted to set the keys, press your keyboard's Calculator key."
-msgstr "GNOME avvia la calcolatrice predefinita quando si preme il tasto Calcolatrice della tastiera. Per usare Inversée:\n\n1. Apri Impostazioni → Tastiera → Visualizza e personalizza scorciatoie → Avviatori e cancella la scorciatoia esistente Avvia calcolatrice.\n\n2. In Scorciatoie personalizzate aggiungi una nuova scorciatoia che esegua il comando qui sotto e, quando ti viene chiesto di premere i tasti, premi il tasto Calcolatrice della tastiera."
-#: src/ui/window.vala:231
+msgstr ""
+"GNOME avvia la calcolatrice predefinita quando si preme il tasto "
+"Calcolatrice della tastiera. Per usare Inversée:\n"
+"\n"
+"1. Apri Impostazioni → Tastiera → Visualizza e personalizza scorciatoie → "
+"Avviatori e cancella la scorciatoia esistente Avvia calcolatrice.\n"
+"\n"
+"2. In Scorciatoie personalizzate aggiungi una nuova scorciatoia che esegua "
+"il comando qui sotto e, quando ti viene chiesto di premere i tasti, premi il "
+"tasto Calcolatrice della tastiera."
+
+#: src/ui/window.vala:316
 msgid "Got it"
 msgstr "Ho capito"
 
-#: src/ui/window.vala:232
+#: src/ui/window.vala:320
 msgid "Open Settings"
 msgstr "Apri impostazioni"
 
-#: src/ui/window.vala:285
+#: src/ui/window.vala:382
 msgid "Quit and reset?"
 msgstr "Uscire e reimpostare?"
 
-#: src/ui/window.vala:286
+#: src/ui/window.vala:383
 msgid ""
-"Inversée will quit. The stack, undo history, saved language, and window size "
-"will all be cleared."
+"Inversée will quit. The stack, undo history, saved language, number format, "
+"and window size will all be cleared."
 msgstr ""
-"Inversée verrà chiusa. Pila, cronologia di annullamento, lingua salvata e "
-"dimensioni della finestra saranno tutte azzerate."
+"Inversée verrà chiusa. Pila, cronologia di annullamento, lingua salvata, "
+"formato numerico e dimensioni della finestra saranno tutte azzerate."
 
-#: src/ui/window.vala:289
+#: src/ui/window.vala:387
 msgid "Cancel"
 msgstr "Annulla"
 
-#: src/ui/window.vala:341
+#: src/ui/window.vala:441
 msgid ""
-"A Reverse Polish Notation calculator.\n"
-"Tip: the menu's “Reassign calculator key…” entry walks you through binding "
-"your keyboard's Calculator key to Inversée."
+"A Reverse Polish Notation calculator with an unbounded stack.\n"
+"\n"
+"Enter operands first, then the operator: type 2, press Enter, type 3, then "
+"press + — the stack shows 5. The newest value (1:) is the top of the stack, "
+"and operators consume from the top.\n"
+"\n"
+"Use swap, drop and rot to reorder the stack, and undo (Ctrl+Z) / redo "
+"(Ctrl+Shift+Z) for any change. Click a stack value to copy it.\n"
+"\n"
+"See the menu's “Keyboard Shortcuts” for the full key list, and “Reassign "
+"calculator key…” to bind your keyboard's Calculator key to Inversée."
 msgstr ""
-"Una calcolatrice in notazione polacca inversa.\n"
-"Suggerimento: la voce di menu «Riassegna il tasto calcolatrice…» ti guida "
-"nell’associare il tasto Calcolatrice della tastiera a Inversée."
+"Una calcolatrice in notazione polacca inversa con pila illimitata.\n"
+"\n"
+"Inserisci prima gli operandi, poi l'operatore: digita 2, premi Invio, digita 3 e premi + — la pila mostra 5. Il valore più recente (1:) è la cima della pila e gli operatori operano dalla cima.\n"
+"\n"
+"Usa swap, drop e rot per riordinare la pila, e annulla (Ctrl+Z) / ripeti (Ctrl+Maiusc+Z) per qualsiasi modifica. Fai clic su un valore della pila per copiarlo.\n"
+"\n"
+"Vedi «Scorciatoie da tastiera» nel menu per l'elenco completo dei tasti e «Riassegna il tasto calcolatrice…» per associare il tasto Calcolatrice della tastiera a Inversée."
 
-#: src/ui/window.vala:540
+#: src/ui/window.vala:648
 msgid "Copied"
 msgstr "Copiato"
 
-#: src/ui/window.vala:546 src/ui/window.vala:559
+#: src/ui/window.vala:654 src/ui/window.vala:667
 msgid "Nothing to copy"
 msgstr "Nulla da copiare"
 
-#: src/ui/window.vala:578
+#: src/ui/window.vala:686
 msgid "Stack copied"
 msgstr "Pila copiata"
+
+#~ msgid ""
+#~ "A Reverse Polish Notation calculator.\n"
+#~ "Tip: the menu's “Reassign calculator key…” entry walks you through "
+#~ "binding your keyboard's Calculator key to Inversée."
+#~ msgstr ""
+#~ "Una calcolatrice in notazione polacca inversa.\n"
+#~ "Suggerimento: la voce di menu «Riassegna il tasto calcolatrice…» ti guida "
+#~ "nell’associare il tasto Calcolatrice della tastiera a Inversée."
 
 #~ msgid "Click to copy"
 #~ msgstr "Clic per copiare"
