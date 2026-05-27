@@ -30,14 +30,33 @@ curl -L -o /tmp/inversee.flatpak \
 - **Full RPN operation set**: `+`, `−`, `×`, `÷`, `mod`, `%`, `x^y`, `√`, `1/x`,
   `+/−`; stack ops `swap`, `drop`, `rot`, `dup`, `dup2`, `clear`.
 - **Unbounded undo** (capped at 1000 entries per session).
-- **Locale-aware display** (`,` or `.` decimal separator) and
-  **locale-tolerant clipboard paste** (thin / non-breaking thousands
-  separators, scientific notation, both decimal separators).
-- **Clipboard**: copy X, copy the whole stack, paste any whitespace-separated
-  list of values.
+- **Configurable number format** (see below): pick Automatic, the system
+  convention, or a fixed one (`1,234.56`, `1 234,56`, `1.234,56`) for display,
+  copy, and paste — applied live, no restart.
+- **Tolerant clipboard paste**: ignores currency symbols, units, and labels
+  around a number, accepts thin / non-breaking thousands separators, smart
+  digit grouping, scientific notation, and both decimal separators.
+- **Clipboard**: copy X, copy the whole stack (one value per line), paste a
+  list of values separated by `;`, newlines, or tabs.
 - **Translations**: English (source), French, German, Italian, Spanish,
   Dutch, Polish, Portuguese — switchable from the in-app menu.
 - **Fully offline** — no network access, no telemetry.
+
+## Usage
+
+Inversée is a Reverse Polish Notation calculator: you enter the operands
+first, then the operator.
+
+1. Type a number and press **Enter** to push it onto the stack.
+2. Type the next number.
+3. Press an operator (`+`, `−`, `×`, `÷`, …) to combine the top values.
+
+For example, `2` `Enter` `3` `+` leaves `5` on the stack. The whole stack
+is always visible; the newest value, labelled `1:`, is the top, and
+operators consume from the top down. Reorder with `swap`, `drop` and `rot`,
+undo any change with **Ctrl+Z** (redo with **Ctrl+Shift+Z**), and click any
+stack value to copy it. The in-app **About Inversée** entry shows the same
+quick-start, and **Keyboard Shortcuts** lists every key.
 
 ## Status
 
@@ -73,6 +92,33 @@ hamburger menu and pick **Reassign calculator key…** — the dialog
 walks you through GNOME Settings → Keyboard, clearing the existing
 Launch Calculator shortcut and adding a Custom Shortcut that runs
 Inversée when you press the key.
+
+## Number format
+
+The hamburger menu's **Number format** submenu sets the decimal separator,
+the thousands separator, and the clipboard behaviour for display, copy, and
+paste at once. Stored values are unaffected — the format only changes how
+numbers are shown and parsed, and it applies immediately without a restart.
+
+| Choice        | Example     | Behaviour                                          |
+|---------------|-------------|----------------------------------------------------|
+| **Automatic** | (default)   | Display and copy follow the system locale; paste is best-effort across conventions. |
+| **System**    | shows yours | Display, copy, and paste all follow the system locale strictly. |
+| `1,234.56`    | US / UK     | Period decimal, comma grouping.                    |
+| `1 234,56`    | French      | Comma decimal, narrow-space grouping.              |
+| `1.234,56`    | German, Spanish, Italian, Dutch, Polish, Portuguese | Comma decimal, period grouping. |
+
+Paste is deliberately forgiving — handy for numbers copied from a PDF or a web
+page that ignore your locale:
+
+- Leading or trailing non-numeric characters (currency symbols, units,
+  labels) are ignored: `Total: 1,234.56 €` → `1234.56`.
+- Values are separated by `;`, newlines, or tabs. A bare space is a thousands
+  separator when it groups three digits (`304 650` → `304650`) but separates
+  values otherwise (`1 2 3` → three values).
+- In **Automatic** mode, when a number contains both `.` and `,` the rightmost
+  is the decimal point, so `1,234.56` and `1.234,56` both read correctly. A
+  lone comma is a decimal point only when your locale uses one.
 
 ## Build
 

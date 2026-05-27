@@ -437,10 +437,19 @@ namespace Inversee {
                 "https://github.com/benjaminbellamy/inversee/issues";
             about.copyright = "© 2026 Benjamin Bellamy";
             about.license_type = Gtk.License.GPL_3_0;
-            about.comments = _("A Reverse Polish Notation calculator.\n"
-                + "Tip: the menu's “Reassign calculator key…” entry"
-                + " walks you through binding your keyboard's Calculator"
-                + " key to Inversée.");
+            about.comments = _(
+                "A Reverse Polish Notation calculator with an unbounded"
+                + " stack.\n\n"
+                + "Enter operands first, then the operator: type 2, press"
+                + " Enter, type 3, then press + — the stack shows 5. The"
+                + " newest value (1:) is the top of the stack, and operators"
+                + " consume from the top.\n\n"
+                + "Use swap, drop and rot to reorder the stack, and undo"
+                + " (Ctrl+Z) / redo (Ctrl+Shift+Z) for any change. Click a"
+                + " stack value to copy it.\n\n"
+                + "See the menu's “Keyboard Shortcuts” for the full key list,"
+                + " and “Reassign calculator key…” to bind your keyboard's"
+                + " Calculator key to Inversée.");
             about.transient_for = this;
             about.modal = true;
             about.present ();
