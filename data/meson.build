@@ -62,9 +62,9 @@ inversee_gresource = gnome.compile_resources(
     dependencies: files(
         'shortcuts.ui',
         'style.css',
-        'icons' / 'scalable' / 'actions' / '@0@-enter-symbolic.svg'.format(app_id),
-        'icons' / 'scalable' / 'actions' / '@0@-clear-symbolic.svg'.format(app_id),
-        'icons' / 'scalable' / 'actions' / '@0@-backspace-symbolic.svg'.format(app_id),
+        'icons' / 'scalable' / 'actions' / 'inversee-enter-symbolic.svg',
+        'icons' / 'scalable' / 'actions' / 'inversee-clear-symbolic.svg',
+        'icons' / 'scalable' / 'actions' / 'inversee-backspace-symbolic.svg',
     ),
 )
 

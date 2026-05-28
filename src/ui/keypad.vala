@@ -86,7 +86,7 @@ namespace Inversee {
             this.add_action_button ("", 4, 1, 1, 1, { "back-key" },
                 () => this.calc.backspace (),
                 _("Backspace"),
-                Config.APP_ID + "-backspace-symbolic");
+                "inversee-backspace-symbolic");
 
             // Rows 2-5 cols 0-3: digit pad + ÷ × − +.
             this.add_digit_button (7, 0, 2);
@@ -128,10 +128,10 @@ namespace Inversee {
             this.add_action_button ("", 4, 2, 1, 1, { "clear-key" },
                 () => this.calc.clear_stack (),
                 _("Clear"),
-                Config.APP_ID + "-clear-symbolic");
+                "inversee-clear-symbolic");
 
             var enter_b = this.make_icon_button (
-                Config.APP_ID + "-enter-symbolic",
+                "inversee-enter-symbolic",
                 { "suggested-action" }, 56);
             describe (enter_b, _("Enter"));
             enter_b.clicked.connect (() => {
@@ -210,15 +210,23 @@ namespace Inversee {
         }
 
         /**
-         * A button whose face is the symbolic icon {@code icon_name}
-         * (embedded in the app resources), sized to {@code pixel_size}.
-         * Symbolic icons recolour to the button's text colour, so they
-         * follow the accent and light/dark theme like the text buttons do.
+         * A button whose face is the SVG named {@code icon_name},
+         * loaded directly from the app GResource at
+         * /fr/benjaminbellamy/Inversee/icons/scalable/actions/<icon_name>.svg
+         * and sized to {@code pixel_size}. We bypass the icon theme
+         * (Gtk.Image.from_icon_name) on purpose: GTK 4.20 in the
+         * GNOME 49 runtime resolves resource-icon-theme entries but
+         * fails to render them, leaving the keys blank. Loading the
+         * SVG straight from the resource into GtkImage avoids that
+         * code path entirely. The SVGs are authored white so they
+         * render correctly on the accent-coloured key backgrounds.
          */
         private Gtk.Button make_icon_button (string icon_name,
                                              string[] css_classes,
                                              int pixel_size) {
-            var image = new Gtk.Image.from_icon_name (icon_name);
+            var image = new Gtk.Image.from_resource (
+                "/fr/benjaminbellamy/Inversee/icons/scalable/actions/"
+                + icon_name + ".svg");
             image.pixel_size = pixel_size;
             var b = new Gtk.Button ();
             b.child = image;
