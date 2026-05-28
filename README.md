@@ -44,19 +44,20 @@ curl -L -o /tmp/inversee.flatpak \
 
 ## Usage
 
-Inversée is a Reverse Polish Notation calculator: you enter the operands
-first, then the operator.
+Inversée uses [Reverse Polish Notation][rpn] (RPN): operands first, then the
+operator. Devised by Polish logician Jan Łukasiewicz in the 1920s and made
+famous by Hewlett-Packard pocket calculators, RPN makes parentheses
+unnecessary — the machine evaluates expressions left to right exactly the way
+you type them.
 
-1. Type a number and press **Enter** to push it onto the stack.
-2. Type the next number.
-3. Press an operator (`+`, `−`, `×`, `÷`, …) to combine the top values.
+To compute `2 + 3`: type `2`, press **Enter**, type `3`, press `+`. The stack
+shows `5`. The whole stack stays visible; the newest value, labelled `1:`, is
+the top, and operators consume from the top down. Reorder with `swap`, `drop`
+and `rot`, undo any change with **Ctrl+Z** (redo with **Ctrl+Shift+Z**), and
+click any stack value to copy it. The in-app **About Inversée** entry shows
+the same quick-start, and **Keyboard Shortcuts** lists every key.
 
-For example, `2` `Enter` `3` `+` leaves `5` on the stack. The whole stack
-is always visible; the newest value, labelled `1:`, is the top, and
-operators consume from the top down. Reorder with `swap`, `drop` and `rot`,
-undo any change with **Ctrl+Z** (redo with **Ctrl+Shift+Z**), and click any
-stack value to copy it. The in-app **About Inversée** entry shows the same
-quick-start, and **Keyboard Shortcuts** lists every key.
+[rpn]: https://en.wikipedia.org/wiki/Reverse_Polish_notation
 
 ## Status
 
@@ -95,10 +96,16 @@ Inversée when you press the key.
 
 ## Number format
 
-The hamburger menu's **Number format** submenu sets the decimal separator,
-the thousands separator, and the clipboard behaviour for display, copy, and
-paste at once. Stored values are unaffected — the format only changes how
-numbers are shown and parsed, and it applies immediately without a restart.
+The hamburger menu's **Number format** submenu picks the decimal separator,
+thousands separator, and clipboard behaviour for display, copy, and paste at
+once. Stored values are unaffected, and the change applies live.
+
+The default **Automatic** mode is the one to keep in everyday use. Display
+and copy follow your system locale, while paste stays *tolerant*: it accepts
+either decimal separator, strips currency symbols, units, and labels around
+a number, handles smart digit grouping, and reads scientific notation. So a
+value copied from a PDF, a spreadsheet, or a web page that uses another
+locale just works — no re-typing or clean-up needed.
 
 | Choice        | Example     | Behaviour                                          |
 |---------------|-------------|----------------------------------------------------|
@@ -108,8 +115,7 @@ numbers are shown and parsed, and it applies immediately without a restart.
 | `1 234,56`    | French      | Comma decimal, narrow-space grouping.              |
 | `1.234,56`    | German, Spanish, Italian, Dutch, Polish, Portuguese | Comma decimal, period grouping. |
 
-Paste is deliberately forgiving — handy for numbers copied from a PDF or a web
-page that ignore your locale:
+Concretely, in Automatic mode:
 
 - Leading or trailing non-numeric characters (currency symbols, units,
   labels) are ignored: `Total: 1,234.56 €` → `1234.56`.

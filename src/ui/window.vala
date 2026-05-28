@@ -438,18 +438,21 @@ namespace Inversee {
             about.copyright = "© 2026 Benjamin Bellamy";
             about.license_type = Gtk.License.GPL_3_0;
             about.comments = _(
-                "A Reverse Polish Notation calculator with an unbounded"
-                + " stack.\n\n"
-                + "Enter operands first, then the operator: type 2, press"
-                + " Enter, type 3, then press + — the stack shows 5. The"
-                + " newest value (1:) is the top of the stack, and operators"
-                + " consume from the top.\n\n"
-                + "Use swap, drop and rot to reorder the stack, and undo"
-                + " (Ctrl+Z) / redo (Ctrl+Shift+Z) for any change. Click a"
-                + " stack value to copy it.\n\n"
-                + "See the menu's “Keyboard Shortcuts” for the full key list,"
-                + " and “Reassign calculator key…” to bind your keyboard's"
-                + " Calculator key to Inversée.");
+                "Reverse Polish Notation (RPN) is a postfix way of writing"
+                + " arithmetic: operands first, then the operator. Devised"
+                + " by Polish logician Jan Łukasiewicz in the 1920s and made"
+                + " famous by Hewlett-Packard pocket calculators, it makes"
+                + " parentheses unnecessary. To compute 2 + 3 in Inversée:"
+                + " type 2, press Enter, type 3, then press +. The stack"
+                + " shows 5.\n\n"
+                + "Numbers are shown, copied, and parsed through the Number"
+                + " format menu. The default Automatic mode follows your"
+                + " system locale for display and copy, while staying"
+                + " tolerant on paste: it accepts either decimal separator,"
+                + " strips currency symbols, units, and labels around a"
+                + " number, and handles smart digit grouping. Pasting a"
+                + " value from a PDF, a spreadsheet, or a web page in a"
+                + " different locale just works — no clean-up needed.");
             about.transient_for = this;
             about.modal = true;
             about.present ();
