@@ -99,6 +99,15 @@
   </screenshots>
 
   <releases>
+    <release version="1.3.1" date="2026-05-28">
+      <description>
+        <p>Fix the missing keypad icons in the Flatpak build.</p>
+        <ul>
+          <li>The Enter, Clear, and Backspace key icons now load straight from the embedded GResource, so they render correctly under the GNOME 49 runtime where the icon-theme resource path silently dropped them.</li>
+          <li>About dialog and README rewritten with a short introduction to Reverse Polish Notation and to the Automatic number format.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.3.0" date="2026-05-27">
       <description>
         <p>A configurable number format and refreshed keypad keys.</p>
