@@ -17,7 +17,7 @@ built to look and feel like a native GNOME application.
 
 ```sh
 curl -L -o /tmp/inversee.flatpak \
-    https://github.com/benjaminbellamy/inversee/releases/download/1.3.1/inversee-1.3.1.flatpak \
+    https://github.com/benjaminbellamy/inversee/releases/download/1.3.2/inversee-1.3.2.flatpak \
     && flatpak install --user --bundle /tmp/inversee.flatpak
 ```
 
